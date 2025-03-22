@@ -35,9 +35,12 @@ const AdminAccountSetting = () => {
         ...values,
       };
 
-      if (!values.profile_image[0].url) {
+      if (
+        !values?.profile_image?.[0].url &&
+        values?.profile_image?.[0]?.originFileObj
+      ) {
         submittedData.profile_image = await compressImage(
-          values.profile_image[0].originFileObj
+          values?.profile_image?.[0]?.originFileObj
         );
       }
       const updatedUserData = new FormData();

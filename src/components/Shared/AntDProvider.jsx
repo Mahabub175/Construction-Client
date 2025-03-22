@@ -54,6 +54,15 @@ const WrappedAntDConfig = ({ children }) => {
 
       dispatch(setColors({ primaryColor, secondaryColor }));
 
+      document.documentElement.style.setProperty(
+        "--primaryColor",
+        primaryColor
+      );
+      document.documentElement.style.setProperty(
+        "--secondaryColor",
+        secondaryColor
+      );
+
       if (favicon) {
         let link = document.querySelector("link[rel~='icon']");
         if (!link) {
@@ -63,15 +72,6 @@ const WrappedAntDConfig = ({ children }) => {
         }
         link.href = favicon;
       }
-
-      document.documentElement.style.setProperty(
-        "--primaryColor",
-        primaryColor
-      );
-      document.documentElement.style.setProperty(
-        "--secondaryColor",
-        secondaryColor
-      );
     }
     setLoading(false);
   }, [data, dispatch, token]);

@@ -63,7 +63,7 @@ const Sidebar = () => {
 
       <div className="sidebar-toggle-button">
         <Button
-          className="-mr-1 bg-white border border-gray-200 rounded-full text-primary"
+          className="-mr-1 bg-white border border-gray-200 rounded-full text-primaryLight"
           type="primary"
           icon={
             collapsed ? (

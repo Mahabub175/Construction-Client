@@ -11,36 +11,52 @@ const PrivateRoute = ({ children }) => {
   const router = useRouter();
   const token = useSelector(useCurrentToken);
 
-  let decodedToken;
-
-  if (token) {
-    decodedToken = jwtDecode(token);
-  }
-
-  const { data, isLoading } = useGetSingleUserQuery(decodedToken?.userId, {
-    skip: !token,
-  });
-
   useEffect(() => {
-    if (!token || isLoading) return;
+    if (!token) {
+      dispatch(logout());
+      router.push("/sign-in");
+      toast.error("You don't have permission to access this page!");
+      return;
+    }
 
-    const decodedToken = jwtDecode(token);
+    let decodedToken;
+    try {
+      decodedToken = jwtDecode(token);
+    } catch (error) {
+      dispatch(logout());
+      router.push("/sign-in");
+      toast.error("Invalid token! Please log in again.");
+      return;
+    }
+
     const tokenExpirationTime = decodedToken.exp * 1000;
     const currentTime = Date.now();
 
     if (tokenExpirationTime <= currentTime) {
-      toast.error("Your session has expired! Please log in again.");
-      router.push("/sign-in");
       dispatch(logout());
+      router.push("/sign-in");
+      toast.error("Your session has expired! Please log in again.");
       return;
     }
+  }, [token, dispatch, router]);
 
-    if (data && decodedToken.role !== data.role) {
-      toast.error("You don't have permission to access this page!");
-      router.push("/sign-in");
-      dispatch(logout());
+  const { data, isLoading } = useGetSingleUserQuery(
+    token ? jwtDecode(token).userId : "",
+    {
+      skip: !token,
     }
-  }, [token, data, isLoading, dispatch, router]);
+  );
+
+  useEffect(() => {
+    if (!isLoading && data && token) {
+      const decodedToken = jwtDecode(token);
+      if (decodedToken.role !== data.role) {
+        dispatch(logout());
+        router.push("/sign-in");
+        toast.error("You don't have permission to access this page!");
+      }
+    }
+  }, [data, isLoading, token, dispatch, router]);
 
   if (!token || isLoading) return null;
 

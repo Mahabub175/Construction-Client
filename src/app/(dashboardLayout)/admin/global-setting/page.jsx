@@ -37,12 +37,14 @@ const AdminAccountSetting = () => {
         submittedData.secondaryColor = values?.secondaryColor?.toHexString();
       }
 
-      if (!values.logo[0].url) {
-        submittedData.logo = await compressImage(values.logo[0].originFileObj);
+      if (!values?.logo?.[0].url) {
+        submittedData.logo = await compressImage(
+          values?.logo?.[0].originFileObj
+        );
       }
-      if (!values.favicon[0].url) {
+      if (!values?.favicon?.[0].url) {
         submittedData.favicon = await compressImage(
-          values.favicon[0].originFileObj
+          values?.favicon?.[0].originFileObj
         );
       }
       const updatedUserData = new FormData();
@@ -102,30 +104,6 @@ const AdminAccountSetting = () => {
           required={true}
         />
         <div className="two-grid">
-          <CustomInput
-            name={"deliveryChargeInsideDhaka"}
-            label={"Delivery Charge Inside Dhaka"}
-            required={false}
-            type={"number"}
-          />
-          <CustomInput
-            name={"deliveryChargeOutsideDhaka"}
-            label={"Delivery Charge Outside Dhaka"}
-            required={false}
-            type={"number"}
-          />
-          <CustomInput
-            name={"deliveryApiKey"}
-            label={"Delivery API Key"}
-            required={false}
-            type={"password"}
-          />
-          <CustomInput
-            name={"deliverySecretKey"}
-            label={"Delivery Secret Key"}
-            required={false}
-            type={"password"}
-          />
           <CustomInput
             name={"businessNumber"}
             label={"Business Number"}
@@ -188,21 +166,7 @@ const AdminAccountSetting = () => {
             label={"Business Work Hours"}
             required={false}
           />
-          <CustomSelect
-            name={"currency"}
-            label={"Global Currency"}
-            options={currenciesOptions}
-            required={true}
-          />
 
-          <CustomSelect
-            name={"ssl"}
-            label={"SSL Status"}
-            options={[
-              { value: "Active", label: "Active" },
-              { value: "Inactive", label: "Inactive" },
-            ]}
-          />
           <Form.Item
             name="primaryColor"
             label="Website Primary Color"

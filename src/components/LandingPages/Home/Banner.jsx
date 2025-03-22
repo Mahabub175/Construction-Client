@@ -26,7 +26,7 @@ const Banner = () => {
         {activeSliders?.map((item) => {
           return (
             <SwiperSlide key={item?._id}>
-              <Link href={`/products?filter=${item?.category?.name}`}>
+              <Link href={"/"}>
                 <Image
                   src={
                     item?.attachment ??

@@ -43,18 +43,18 @@ const AdminDonation = () => {
 
   const handleStatusUpdate = async () => {
     let updatedData;
-    if (currentUserStatus === "active") {
+    if (currentUserStatus) {
       updatedData = {
         id: itemId,
         data: {
-          status: "inactive",
+          status: false,
         },
       };
-    } else if (currentUserStatus === "inactive") {
+    } else if (!currentUserStatus) {
       updatedData = {
         id: itemId,
         data: {
-          status: "active",
+          status: true,
         },
       };
     }
@@ -120,6 +120,12 @@ const AdminDonation = () => {
       align: "center",
     },
     {
+      title: "Number",
+      dataIndex: "number",
+      key: "number",
+      align: "center",
+    },
+    {
       title: "Email",
       dataIndex: "email",
       key: "email",
@@ -160,11 +166,11 @@ const AdminDonation = () => {
         let text;
 
         switch (item) {
-          case "Active":
+          case item:
             color = "green";
             text = "Active";
             break;
-          case "Inactive":
+          case !item:
             color = "red";
             text = "Inactive";
             break;
@@ -212,6 +218,7 @@ const AdminDonation = () => {
   const tableData = users?.results?.map((item) => ({
     key: item._id,
     name: item.name ?? "N/A",
+    number: item?.number ?? "N/A",
     email: item?.email ?? "N/A",
     role: item?.role,
     createdAt: moment(item.createdAt).format("Do MMM, YYYY"),
