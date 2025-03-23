@@ -1,4 +1,4 @@
-import { FaImage, FaUser } from "react-icons/fa";
+import { FaImage, FaPager, FaUser } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiUserSettingsFill } from "react-icons/ri";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
@@ -13,6 +13,11 @@ export const adminSidebarRoutes = [
     name: "Sliders",
     path: "slider",
     icon: FaImage,
+  },
+  {
+    name: "Blog",
+    path: "blog",
+    icon: FaPager,
   },
   {
     name: "User",

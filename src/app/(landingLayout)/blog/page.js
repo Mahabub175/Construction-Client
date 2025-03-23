@@ -1,12 +1,11 @@
-import React from "react";
-
-export const metadata = {
-  title: "Blog - Genesis Carpentry",
-  description: "This is the blog page of Genesis Carpentry website.",
-};
+import AllBlogs from "@/components/LandingPages/Blog/AllBlogs";
 
 const page = () => {
-  return <div>This is blog page</div>;
+  return (
+    <>
+      <AllBlogs />
+    </>
+  );
 };
 
 export default page;

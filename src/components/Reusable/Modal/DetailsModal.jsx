@@ -35,6 +35,10 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
   const formatDate = (value) => moment(value).format("Do MMM, YYYY");
 
   const renderValue = (key, value) => {
+    if (key.toLowerCase() === "content") {
+      return <div dangerouslySetInnerHTML={{ __html: value }} />;
+    }
+
     if (key.toLowerCase().includes("date") || key === "createdAt") {
       return formatDate(value);
     }
