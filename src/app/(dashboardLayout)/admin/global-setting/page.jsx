@@ -3,7 +3,6 @@
 import { SubmitButton } from "@/components/Reusable/Button/CustomButton";
 import CustomForm from "@/components/Reusable/Form/CustomForm";
 import CustomInput from "@/components/Reusable/Form/CustomInput";
-import CustomSelect from "@/components/Reusable/Form/CustomSelect";
 import FileUploader from "@/components/Reusable/Form/FileUploader";
 import {
   useGetAllGlobalSettingQuery,
@@ -13,7 +12,6 @@ import { appendToFormData } from "@/utilities/lib/appendToFormData";
 import { compressImage } from "@/utilities/lib/compressImage";
 import { transformDefaultValues } from "@/utilities/lib/transformedDefaultValues";
 import { ColorPicker, Divider, Form } from "antd";
-import { currencies } from "currencies.json";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -73,10 +71,6 @@ const AdminAccountSetting = () => {
   useEffect(() => {
     setFields(transformDefaultValues(data?.results));
   }, [data]);
-
-  const currenciesOptions = currencies.map(({ name, symbol, code }) => {
-    return { label: `${name} (${symbol})`, value: code };
-  });
 
   return (
     <section className="w-4/6 mx-auto">

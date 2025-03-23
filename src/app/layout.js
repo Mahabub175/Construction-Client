@@ -8,10 +8,10 @@ const ralewayFont = Raleway({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: "Genesis Carpentry",
-//   description: "Complete Portfolio Website",
-// };
+export const metadata = {
+  title: "Genesis Carpentry",
+  description: "Complete Portfolio Website",
+};
 
 const RootLayout = ({ children }) => {
   return (

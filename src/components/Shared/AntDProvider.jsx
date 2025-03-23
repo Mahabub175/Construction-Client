@@ -12,6 +12,7 @@ import { jwtDecode } from "jwt-decode";
 import { Toaster } from "sonner";
 import { usePathname } from "next/navigation";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
+import logo from "@/assets/images/logo-black.png";
 
 const AntDProvider = ({ children }) => {
   return (
@@ -46,7 +47,7 @@ const WrappedAntDConfig = ({ children }) => {
     setLoading(true);
 
     if (data?.results) {
-      const websiteName = data?.results?.name || "Viscart";
+      const websiteName = data?.results?.name || "Genesis Carpentry";
 
       document.title = websiteName;
 
@@ -77,8 +78,8 @@ const WrappedAntDConfig = ({ children }) => {
   }, [data, dispatch, token]);
 
   useEffect(() => {
-    const websiteName = data?.results?.name || "Viscart";
-    const favicon = data?.results?.favicon || "Viscart";
+    const websiteName = data?.results?.name || "Genesis Carpentry";
+    const favicon = data?.results?.favicon || logo;
     document.title = websiteName;
 
     let link = document.querySelector("link[rel~='icon']");
