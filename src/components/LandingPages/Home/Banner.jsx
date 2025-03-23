@@ -32,10 +32,11 @@ const Banner = () => {
                     item?.attachment ??
                     "https://thumbs.dreamstime.com/b/demo-demo-icon-139882881.jpg"
                   }
-                  alt={item.name}
+                  alt={item?.name ?? "banner"}
                   width={2500}
                   height={700}
                   className="h-[200px] lg:h-fit w-full"
+                  priority
                 />
                 <div className="absolute z-10 top-20 lg:top-[45%] left-[5%]">
                   {item?.name && (
