@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`-my-2`}>
+    <nav className={`-my-3 lg:-my-5`}>
       <div className=" flex justify-between lg:justify-center items-center gap-4">
         <Link href="/" className="w-auto lg:hidden">
           <Image

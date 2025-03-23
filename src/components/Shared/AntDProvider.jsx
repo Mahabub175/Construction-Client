@@ -78,14 +78,17 @@ const WrappedAntDConfig = ({ children }) => {
   }, [data, dispatch, token]);
 
   useEffect(() => {
-    const websiteName = data?.results?.name || "Genesis Carpentry";
-    const favicon = data?.results?.favicon || logo;
-    document.title = websiteName;
+    if (!data?.results?.favicon) return;
+
+    const favicon = data.results.favicon || logo;
+    document.title = data.results.name || "Genesis Carpentry";
 
     let link = document.querySelector("link[rel~='icon']");
-    link = document.createElement("link");
-    link.rel = "icon";
-    document.head.appendChild(link);
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
     link.href = favicon;
   }, [data, router]);
 

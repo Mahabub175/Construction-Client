@@ -2,7 +2,7 @@ import Banner from "@/components/LandingPages/Home/Banner";
 import NewsletterBanner from "@/components/LandingPages/Home/NewsletterBanner";
 
 export const metadata = {
-  title: "Home | Genesis Carpentry",
+  title: "Genesis Carpentry",
   description: "This is the homepage of Genesis Carpentry website.",
 };
 
