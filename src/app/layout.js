@@ -3,8 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AntDProvider from "@/components/Shared/AntDProvider";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Raleway } from "next/font/google"
 
-const interFont = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
+// const interFont = Inter({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const ralewayFont = Raleway({weight: ["400", "500", "700"]})
 
 export const metadata = {
   title: "Viscart",
@@ -15,7 +17,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-KWXB5SSR" />
-      <body className={interFont.className}>
+      <body className={`${ralewayFont.className}`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KWXB5SSR"
