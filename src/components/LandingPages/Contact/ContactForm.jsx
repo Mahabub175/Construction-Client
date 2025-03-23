@@ -33,7 +33,7 @@ const ContactForm = () => {
       from_name: values?.name,
       from_email: values?.email,
       from_number: values?.number,
-      to_name: "Vitasoft Solutions",
+      to_name: "Genesis Carpentry",
       message: values?.message,
     };
 

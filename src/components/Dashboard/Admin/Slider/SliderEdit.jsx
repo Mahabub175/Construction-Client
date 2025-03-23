@@ -1,6 +1,5 @@
 "use client";
 
-import CustomDrawer from "@/components/Reusable/Drawer/CustomDrawer";
 import CustomForm from "@/components/Reusable/Form/CustomForm";
 import CustomSelect from "@/components/Reusable/Form/CustomSelect";
 import FormButton from "@/components/Shared/FormButton";
@@ -14,6 +13,7 @@ import {
   useGetSingleSliderQuery,
   useUpdateSliderMutation,
 } from "@/redux/services/slider/sliderApi";
+import CustomModal from "@/components/Reusable/Modal/CustomModal.jsx";
 
 const SliderEdit = ({ open, setOpen, itemId }) => {
   const [fields, setFields] = useState([]);
@@ -73,11 +73,10 @@ const SliderEdit = ({ open, setOpen, itemId }) => {
   }, [sliderData]);
 
   return (
-    <CustomDrawer
+    <CustomModal
       open={open}
       setOpen={setOpen}
       title="Edit Slider"
-      placement={"left"}
       loading={isCategoryFetching}
     >
       <CustomForm onSubmit={onSubmit} fields={fields}>
@@ -94,7 +93,7 @@ const SliderEdit = ({ open, setOpen, itemId }) => {
 
         <FormButton setOpen={setOpen} loading={isLoading} />
       </CustomForm>
-    </CustomDrawer>
+    </CustomModal>
   );
 };
 

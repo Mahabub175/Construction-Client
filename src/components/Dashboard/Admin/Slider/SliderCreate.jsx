@@ -1,4 +1,3 @@
-import CustomDrawer from "@/components/Reusable/Drawer/CustomDrawer";
 import CustomForm from "@/components/Reusable/Form/CustomForm";
 import FormButton from "@/components/Shared/FormButton";
 import { appendToFormData } from "@/utilities/lib/appendToFormData";
@@ -6,6 +5,7 @@ import { toast } from "sonner";
 import { compressImage } from "@/utilities/lib/compressImage";
 import { useAddSliderMutation } from "@/redux/services/slider/sliderApi";
 import SliderForm from "./SliderForm.jsx";
+import CustomModal from "@/components/Reusable/Modal/CustomModal.jsx";
 
 const SliderCreate = ({ open, setOpen }) => {
   const [addSlider, { isLoading }] = useAddSliderMutation();
@@ -18,7 +18,7 @@ const SliderCreate = ({ open, setOpen }) => {
         ...values,
       };
 
-      if (values.attachment) {
+      if (values?.attachment) {
         submittedData.attachment = await compressImage(
           values.attachment[0].originFileObj
         );
@@ -42,13 +42,13 @@ const SliderCreate = ({ open, setOpen }) => {
   };
 
   return (
-    <CustomDrawer open={open} setOpen={setOpen} title="Create Slider">
+    <CustomModal open={open} setOpen={setOpen} title="Create Slider">
       <CustomForm onSubmit={onSubmit}>
         <SliderForm />
 
         <FormButton setOpen={setOpen} loading={isLoading} />
       </CustomForm>
-    </CustomDrawer>
+    </CustomModal>
   );
 };
 

@@ -9,7 +9,6 @@ import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/glob
 const ContactDetails = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
 
-  // test
   return (
     <section className="my-container pt-10 lg:pt-24">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-10">

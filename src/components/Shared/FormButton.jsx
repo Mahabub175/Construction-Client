@@ -3,7 +3,7 @@ import { SubmitButton } from "../Reusable/Button/CustomButton";
 
 const FormButton = ({ setOpen, loading }) => {
   return (
-    <div className="flex justify-end items-center gap-6 mt-10">
+    <div className="flex justify-center lg:justify-end items-center gap-6 mt-10">
       <Button
         onClick={() => setOpen(false)}
         type="default"
