@@ -19,7 +19,10 @@ import ProfileContent from "./ProfileContent";
 
 const Navbar = () => {
   const router = useRouter();
+
   const [visible, setVisible] = useState(false);
+  const [current, setCurrent] = useState("home");
+
   const user = useSelector(useCurrentUser);
   const { data } = useGetSingleUserQuery(user?._id, { skip: !user?._id });
   const { data: globalData } = useGetAllGlobalSettingQuery();
@@ -31,8 +34,6 @@ const Navbar = () => {
   const closeDrawer = () => {
     setVisible(false);
   };
-
-  const [current, setCurrent] = useState("home");
 
   const onClick = (e) => {
     setCurrent(e.key);
