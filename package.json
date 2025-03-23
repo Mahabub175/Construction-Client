@@ -38,7 +38,6 @@
     "swiper": "^11.1.14"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.15",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8.5.3",
