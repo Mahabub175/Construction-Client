@@ -55,7 +55,7 @@ const AllServices = () => {
 
                 <div className="mt-auto pt-4">
                   <Link href={`/contact`}>
-                    <button className="w-full py-3 font-medium rounded-xl bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
+                    <button className="w-full py-3 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
                       Contact Us
                     </button>
                   </Link>
@@ -67,7 +67,7 @@ const AllServices = () => {
       ) : (
         <div className="text-center text-lg text-gray-600 mt-20">
           <Empty size="large" />
-          No blogs available.
+          No Services available.
         </div>
       )}
     </section>

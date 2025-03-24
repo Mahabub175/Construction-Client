@@ -63,7 +63,7 @@ const AllBlogs = () => {
 
                 <div className="mt-auto pt-4">
                   <Link href={`/blog/${item?.slug}`}>
-                    <button className="w-full py-3 font-medium rounded-xl bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
+                    <button className="w-full py-3 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
                       Read More
                     </button>
                   </Link>

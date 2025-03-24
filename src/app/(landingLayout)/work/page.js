@@ -1,4 +1,4 @@
-import React from "react";
+import AllWorks from "@/components/LandingPages/Work/AllWorks";
 
 export const metadata = {
   title: "Work - Genesis Carpentry",
@@ -6,7 +6,11 @@ export const metadata = {
 };
 
 const page = () => {
-  return <div>This is work page</div>;
+  return (
+    <>
+      <AllWorks />
+    </>
+  );
 };
 
 export default page;
