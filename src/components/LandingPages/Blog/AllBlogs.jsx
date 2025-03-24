@@ -12,9 +12,7 @@ const AllBlogs = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { data: blogsData, isLoading } = useGetAllBlogsQuery();
 
-  const activeBlogs = blogsData?.results?.filter(
-    (item) => item?.status !== "Inactive"
-  );
+  const activeBlogs = blogsData?.results?.filter((item) => item?.status);
 
   const filteredBlogs = activeBlogs?.filter((blog) =>
     blog.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -59,7 +57,7 @@ const AllBlogs = () => {
 
               <div className="p-6 flex flex-col flex-grow">
                 <h4 className="text-xl font-bold mb-3">{item?.name}</h4>
-                <p className="text-gray-600 text-lg leading-relaxed flex-grow">
+                <p className="text-gray-600 leading-relaxed flex-grow">
                   {item?.shortDescription?.slice(0, 100)}
                 </p>
 

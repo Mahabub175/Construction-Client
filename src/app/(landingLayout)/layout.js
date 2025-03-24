@@ -6,7 +6,7 @@ const LandingLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className="">{children}</div>
+      <div>{children}</div>
       <BackToTop />
 
       <Footer />
