@@ -1,21 +1,8 @@
-"use client";
-
-import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
-import Image from "next/image";
-import logo from "@/assets/images/logo-white.png";
-
 const LoadingAnimation = () => {
-  const { data: globalData } = useGetAllGlobalSettingQuery();
   return (
-    <>
-      <Image
-        src={globalData?.results?.logo ?? logo}
-        alt="logo"
-        height={200}
-        width={200}
-        className="animate-pulse"
-      />
-    </>
+    <section className="h-screen flex items-center justify-center">
+      <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primary"></div>
+    </section>
   );
 };
 

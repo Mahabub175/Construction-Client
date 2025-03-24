@@ -13,6 +13,7 @@ import { Toaster } from "sonner";
 import { usePathname } from "next/navigation";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
 import logo from "@/assets/images/logo-black.png";
+import LoadingAnimation from "./LoadingAnimation";
 
 const AntDProvider = ({ children }) => {
   return (
@@ -78,23 +79,22 @@ const WrappedAntDConfig = ({ children }) => {
   }, [data, dispatch, token]);
 
   useEffect(() => {
-    const websiteName = data?.results?.name || "Genesis Carpentry";
-    const favicon = data?.results?.favicon || logo;
-    document.title = websiteName;
+    if (!data?.results?.favicon) return;
+
+    const favicon = data.results.favicon || logo;
+    document.title = data.results.name || "Genesis Carpentry";
 
     let link = document.querySelector("link[rel~='icon']");
-    link = document.createElement("link");
-    link.rel = "icon";
-    document.head.appendChild(link);
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
     link.href = favicon;
   }, [data, router]);
 
   if (loading || isFetching || slider?.results?.length === 0) {
-    return (
-      <section className="h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
-      </section>
-    );
+    return <LoadingAnimation />;
   }
 
   return (

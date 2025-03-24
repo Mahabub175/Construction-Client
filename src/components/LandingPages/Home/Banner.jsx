@@ -15,7 +15,7 @@ const Banner = () => {
 
   const activeSliders = sliders?.results?.filter((item) => item.status);
 
-  console.log(activeSliders)
+  
 
   return (
     <section className="relative mb-10">

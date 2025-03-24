@@ -1,7 +1,8 @@
 "use client";
 
 import { Input } from "antd";
-import { FaPlus, FaSearch, FaTrash } from "react-icons/fa";
+import { FaSearch, FaTrash } from "react-icons/fa";
+import { IoAddCircleOutline } from "react-icons/io5";
 import { toast } from "sonner";
 
 const TableHeader = ({
@@ -39,8 +40,8 @@ const TableHeader = ({
             className="flex gap-3 items-center mt-6 lg:mt-0 justify-center"
             onClick={() => setOpen(true)}
           >
-            <button className="bg-primary rounded-lg px-6 py-2 border border-primary flex items-center gap-2 text-white font-bold text-md hover:bg-transparent hover:text-primary duration-300">
-              <FaPlus className="text-2xl" />
+            <button className="bg-primary backdrop-blur-md border border-white/30 px-6 py-2 flex items-center gap-2 text-white font-bold text-md rounded-lg shadow-md hover:bg-white/30 hover:text-primary duration-300 hover:border-primary">
+              <IoAddCircleOutline className="text-2xl" />
               Create {title}
             </button>
           </div>
@@ -60,10 +61,10 @@ const TableHeader = ({
           </div>
         </div>
 
-        <div className="relative lg:w-1/4 mt-5 lg:mt-0">
+        <div className="relative lg:w-1/4 mt-5 lg:mt-0 group">
           <div className="flex">
             <Input
-              suffix={<FaSearch />}
+              suffix={<FaSearch className="group-hover:text-primary" />}
               placeholder="Search..."
               className="py-1.5"
               size="large"

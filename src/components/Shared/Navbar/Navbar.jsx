@@ -51,9 +51,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`-my-2`}>
-      <div className=" flex justify-between lg:justify-center items-center gap-4">
-        <Link href="/" className="w-auto lg:hidden">
+    <nav className={`-my-3 lg:-my-5 my-container`}>
+      <div className="flex justify-between lg:justify-center items-center gap-4">
+        <Link href="/" className="w-auto lg:hidden -ml-4">
           <Image
             src={globalData?.results?.logo ?? logo}
             alt="logo"
@@ -64,11 +64,11 @@ const Navbar = () => {
             }}
           />
         </Link>
-        <div className="lg:hidden mr-4">
+        <div className="lg:hidden mr-2">
           <FaBars onClick={showDrawer} className="text-lg cursor-pointer" />
         </div>
         <div className="lg:flex items-center gap-10 hidden">
-          <div className="hidden lg:flex lg:flex-wrap gap-8 justify-center items-center">
+          <div className="hidden lg:flex lg:flex-wrap gap-8 items-center">
             <MenuItems
               items={menuItems}
               setCurrent={setCurrent}
