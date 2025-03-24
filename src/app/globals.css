@@ -83,12 +83,12 @@
 
 .swiper-button-prev {
   /* display: none !important; */
-  height: 30px !important;
+  height: 20px !important;
   color: white !important;
   
 }
 .swiper-button-next {
-  height: 30px !important;
+  height: 20px !important;
   color: white !important;
   /* display: none !important; */
 }
