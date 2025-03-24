@@ -31,12 +31,12 @@ const NewsletterBanner = () => {
   };
 
   return (
-    <section className="mt-10 my-container flex flex-col lg:flex-row justify-between items-center gap-5">
-      <div className="text-center lg:text-start">
+    <section className="mt-10 my-container flex flex-col justify-between items-center gap-5">
+      <div className="text-center">
         <h3 className="text-3xl font-bold mb-2">Newsletter</h3>
-        <p>Subscribe to get updates about our products.</p>
+        <p>Subscribe to get updates about our services.</p>
       </div>
-      <div className="px-10 space-y-3 py-10">
+      <div className="px-10 space-y-3 mb-10">
         <Form
           onFinish={onSubmit}
           className="flex items-center lg:w-[450px] relative gap-2"
