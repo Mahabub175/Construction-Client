@@ -7,52 +7,64 @@ import { appendToFormData } from "@/utilities/lib/appendToFormData";
 import { transformDefaultValues } from "@/utilities/lib/transformedDefaultValues";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import ServiceForm from "./ServiceForm.jsx";
+import WorkForm from "./WorkForm.jsx";
 import { compressImage } from "@/utilities/lib/compressImage";
 import {
-  useGetSingleServiceQuery,
-  useUpdateServiceMutation,
-} from "@/redux/services/service/serviceApi";
+  useGetSingleWorkQuery,
+  useUpdateWorkMutation,
+} from "@/redux/services/work/workApi";
 import CustomModal from "@/components/Reusable/Modal/CustomModal.jsx";
+import { base_url_image } from "@/utilities/configs/base_api.js";
 
-const ServiceEdit = ({ open, setOpen, itemId }) => {
+const WorkEdit = ({ open, setOpen, itemId }) => {
   const [fields, setFields] = useState([]);
 
-  const { data: serviceData, isFetching: isServiceFetching } =
-    useGetSingleServiceQuery(itemId, {
+  const { data: workData, isFetching: isWorkFetching } = useGetSingleWorkQuery(
+    itemId,
+    {
       skip: !itemId,
-    });
+    }
+  );
 
-  const [updateService, { isLoading }] = useUpdateServiceMutation();
+  const [updateWork, { isLoading }] = useUpdateWorkMutation();
 
   const onSubmit = async (values) => {
-    const toastId = toast.loading("Updating Service...");
+    const toastId = toast.loading("Updating Work...");
     try {
-      const submittedData = {
-        ...values,
-      };
+      const submittedData = { ...values };
+
+      const existingImages =
+        values?.images
+          ?.map((image) => image?.url?.replace(`${base_url_image}`, ""))
+          .filter(Boolean) || [];
+
+      const newImages = values?.images
+        ?.filter((image) => image.originFileObj)
+        .map((image) => image.originFileObj);
+
+      submittedData.images = [...existingImages, ...newImages];
 
       if (
-        values?.attachment &&
-        Array.isArray(values.attachment) &&
-        !values.attachment[0]?.url
+        values?.mainImage &&
+        Array.isArray(values.mainImage) &&
+        !values.mainImage[0]?.url
       ) {
-        submittedData.attachment = await compressImage(
-          values.attachment[0].originFileObj
+        submittedData.mainImage = await compressImage(
+          values.mainImage[0].originFileObj
         );
       } else {
-        delete submittedData.attachment;
+        delete submittedData.mainImage;
       }
 
-      const updatedServiceData = new FormData();
-      appendToFormData(submittedData, updatedServiceData);
+      const updatedWorkData = new FormData();
+      appendToFormData(submittedData, updatedWorkData);
 
       const updatedData = {
         id: itemId,
-        data: updatedServiceData,
+        data: updatedWorkData,
       };
 
-      const res = await updateService(updatedData);
+      const res = await updateWork(updatedData);
 
       if (res.data.success) {
         toast.success(res.data.message, { id: toastId });
@@ -61,8 +73,8 @@ const ServiceEdit = ({ open, setOpen, itemId }) => {
         toast.error(res.data.errorMessage, { id: toastId });
       }
     } catch (error) {
-      console.error("Error updating Service:", error);
-      toast.error("An error occurred while updating the Service.", {
+      console.error("Error updating Work:", error);
+      toast.error("An error occurred while updating the Work.", {
         id: toastId,
       });
     }
@@ -70,25 +82,25 @@ const ServiceEdit = ({ open, setOpen, itemId }) => {
 
   useEffect(() => {
     setFields(
-      transformDefaultValues(serviceData, [
+      transformDefaultValues(workData, [
         {
           name: "list",
-          value: serviceData?.list,
+          value: workData?.list,
           errors: "",
         },
       ])
     );
-  }, [serviceData]);
+  }, [workData]);
 
   return (
     <CustomModal
       open={open}
       setOpen={setOpen}
-      title="Edit Service"
-      loading={isServiceFetching}
+      title="Edit Work"
+      loading={isWorkFetching}
     >
       <CustomForm onSubmit={onSubmit} fields={fields}>
-        <ServiceForm attachment={serviceData?.attachment} />
+        <WorkForm attachment={workData?.mainImage} />
 
         <CustomSelect
           name={"status"}
@@ -105,4 +117,4 @@ const ServiceEdit = ({ open, setOpen, itemId }) => {
   );
 };
 
-export default ServiceEdit;
+export default WorkEdit;

@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import { formatImagePath } from "./formatImagePath";
 
 const excludedKeys = [];
 
@@ -46,7 +45,7 @@ export const transformDefaultValues = (defaultValue, selectedData) => {
         } else if (Array.isArray(value)) {
           if (key === "images" && Array.isArray(value)) {
             value = value.map((url, index) => ({
-              url: formatImagePath(url),
+              url: url,
               uid: `__AUTO__${Date.now()}_${index}__`,
             }));
           } else {

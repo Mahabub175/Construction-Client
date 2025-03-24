@@ -1,7 +1,6 @@
 import { Modal, Spin, Descriptions, Tag, Image } from "antd";
 import moment from "moment";
 import { SubmitButton } from "../Button/CustomButton";
-import { formatImagePath } from "@/utilities/lib/formatImagePath";
 
 const formatLabel = (label) => {
   const withSpaces = label.replace(/_/g, " ");
@@ -18,7 +17,7 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
     setModalOpen(false);
   };
 
-  const excludedKeys = details ? ["__v", "updatedAt", "_id", "variants"] : [];
+  const excludedKeys = details ? ["__v", "updatedAt", "_id", "images"] : [];
 
   const formatStatus = (value) => (
     <Tag color={value ? "green" : "red"} className="capitalize">
@@ -32,7 +31,7 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
     </Tag>
   );
 
-  const formatDate = (value) => moment(value).format("Do MMM, YYYY");
+  const formatDate = (value) => moment(value).format("Do MMMM, YYYY");
 
   const renderValue = (key, value) => {
     if (key.toLowerCase() === "content") {
@@ -143,16 +142,27 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
                   <Image src={value} alt={key} style={{ maxWidth: 200 }} />
                 </Descriptions.Item>
               ))}
-            {details?.images?.length > 0 &&
-              details?.images?.map((image, index) => (
-                <Descriptions.Item key={index} label={`Images ${index + 1}`}>
-                  <Image
-                    src={formatImagePath(image)}
-                    alt={index}
-                    style={{ maxWidth: 200 }}
-                  />
-                </Descriptions.Item>
-              ))}
+            <Descriptions.Item label={formatLabel("Images")}>
+              {details?.images?.length > 0 &&
+                details?.images?.map((image, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      position: "relative",
+                      display: "inline-block",
+                      marginRight: 10,
+                    }}
+                  >
+                    <Image
+                      src={image}
+                      alt={index}
+                      width={100}
+                      height={100}
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+            </Descriptions.Item>
           </Descriptions>
 
           <div className="flex justify-end mt-10">
