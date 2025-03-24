@@ -42,7 +42,7 @@ const Banner = () => {
                   alt={item?.name ?? "banner"}
                   width={2500}
                   height={700}
-                  className="w-full h-[250px] md:h-[350px] lg:-[500px] xxl:h-[700px] object-cover"
+                  className="w-full h-[250px] md:h-[350px] lg:h-[500px] xxl:h-[700px] object-cover"
                   priority
                 />
                 <div className="absolute z-10 top-20 lg:top-[45%] left-[5%]">
