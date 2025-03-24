@@ -60,7 +60,7 @@ const AllWorks = () => {
 
             <div className="flex justify-center mt-10 mb-4">
               <Link
-                href={`/works/${work.slug}`}
+                href={`/work/${work.slug}`}
                 className="px-10 py-2 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300"
               >
                 View Project

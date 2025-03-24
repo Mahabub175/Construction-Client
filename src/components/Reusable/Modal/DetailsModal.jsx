@@ -1,6 +1,6 @@
 import { Modal, Spin, Descriptions, Tag, Image } from "antd";
-import moment from "moment";
 import { SubmitButton } from "../Button/CustomButton";
+import dayjs from "dayjs";
 
 const formatLabel = (label) => {
   const withSpaces = label.replace(/_/g, " ");
@@ -31,7 +31,7 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
     </Tag>
   );
 
-  const formatDate = (value) => moment(value).format("Do MMMM, YYYY");
+  const formatDate = (value) => dayjs(value).format("Do MMMM, YYYY");
 
   const renderValue = (key, value) => {
     if (key.toLowerCase() === "content") {

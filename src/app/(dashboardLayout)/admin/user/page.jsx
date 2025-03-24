@@ -11,7 +11,7 @@ import {
   useUpdateUserStatusMutation,
 } from "@/redux/services/auth/authApi";
 import { Input, Pagination, Space, Table, Tag, Tooltip } from "antd";
-import moment from "moment";
+import dayjs from "dayjs";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
@@ -221,7 +221,7 @@ const AdminDonation = () => {
     number: item?.number ?? "N/A",
     email: item?.email ?? "N/A",
     role: item?.role,
-    createdAt: moment(item.createdAt).format("Do MMM, YYYY"),
+    createdAt: dayjs(item.createdAt).format("Do MMM, YYYY"),
     status: item?.status,
   }));
 
