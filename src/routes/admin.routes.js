@@ -2,6 +2,8 @@ import { FaImage, FaPager, FaUser } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiUserSettingsFill } from "react-icons/ri";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { GrBusinessService } from "react-icons/gr";
+import { BsPersonWorkspace } from "react-icons/bs";
 
 export const adminSidebarRoutes = [
   {
@@ -13,6 +15,16 @@ export const adminSidebarRoutes = [
     name: "Sliders",
     path: "slider",
     icon: FaImage,
+  },
+  {
+    name: "Service",
+    path: "service",
+    icon: GrBusinessService,
+  },
+  {
+    name: "Work",
+    path: "work",
+    icon: BsPersonWorkspace,
   },
   {
     name: "Blog",
