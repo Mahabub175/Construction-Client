@@ -1,27 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
-import "swiper/css";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
+import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import Link from "next/link";
+
 
 const Banner = () => {
   const { data: sliders } = useGetAllSlidersQuery();
 
   const activeSliders = sliders?.results?.filter((item) => item.status);
 
+  console.log(activeSliders)
+
   return (
     <section className="relative mb-10">
       <Swiper
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination, Navigation]}
         slidesPerView={1}
+        loop={true}
         autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
+            delay: 4000,
+            disableOnInteraction: false,
         }}
-        className="h-full"
+        pagination={{
+            clickable: true,
+        }}
+        navigation={true}
+        className="mySwiper h-full"
       >
         {activeSliders?.map((item) => {
           return (
@@ -35,7 +45,7 @@ const Banner = () => {
                   alt={item?.name ?? "banner"}
                   width={2500}
                   height={700}
-                  className="h-[200px] lg:h-fit w-full"
+                  className="h-[220px] lg:h-fit w-full"
                   priority
                 />
                 <div className="absolute z-10 top-20 lg:top-[45%] left-[5%]">

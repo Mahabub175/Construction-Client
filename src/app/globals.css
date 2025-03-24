@@ -82,10 +82,15 @@
 }
 
 .swiper-button-prev {
-  display: none !important;
+  /* display: none !important; */
+  height: 30px !important;
+  color: white !important;
+  
 }
 .swiper-button-next {
-  display: none !important;
+  height: 30px !important;
+  color: white !important;
+  /* display: none !important; */
 }
 
 .two-grid {
@@ -96,4 +101,12 @@
 }
 .my-container {
   @apply container mx-auto px-2 lg:px-5;
+}
+
+span.swiper-pagination-bullet {
+  height: 16px !important;
+  width: 16px !important;
+  background-color: #FFFFFF20;
+  border: 2px solid white;
+  margin-bottom: 30px;
 }
