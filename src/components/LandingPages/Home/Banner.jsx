@@ -5,17 +5,14 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
 import "swiper/css";
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Link from "next/link";
-
 
 const Banner = () => {
   const { data: sliders } = useGetAllSlidersQuery();
 
   const activeSliders = sliders?.results?.filter((item) => item.status);
-
-  
 
   return (
     <section className="relative mb-10">
@@ -24,14 +21,14 @@ const Banner = () => {
         slidesPerView={1}
         loop={true}
         autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
+          delay: 4000,
+          disableOnInteraction: false,
         }}
         pagination={{
-            clickable: true,
+          clickable: true,
         }}
         navigation={true}
-        className="mySwiper h-full"
+        className="mySwiper lg:max-h-[700px]"
       >
         {activeSliders?.map((item) => {
           return (
@@ -45,7 +42,7 @@ const Banner = () => {
                   alt={item?.name ?? "banner"}
                   width={2500}
                   height={700}
-                  className="h-[220px] lg:h-fit w-full"
+                  className="w-full lg:object-contain h-[250px] lg:h-full"
                   priority
                 />
                 <div className="absolute z-10 top-20 lg:top-[45%] left-[5%]">

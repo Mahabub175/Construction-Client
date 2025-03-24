@@ -81,16 +81,11 @@
   overflow-x: auto !important;
 }
 
-.swiper-button-prev {
-  /* display: none !important; */
-  height: 20px !important;
-  color: white !important;
-  
-}
+.swiper-button-prev,
 .swiper-button-next {
-  height: 20px !important;
   color: white !important;
-  /* display: none !important; */
+  font-size: 18px !important;
+  scale: 0.6;
 }
 
 .two-grid {
@@ -104,9 +99,13 @@
 }
 
 span.swiper-pagination-bullet {
-  height: 16px !important;
-  width: 16px !important;
-  background-color: #FFFFFF20;
+  height: 12px !important;
+  width: 12px !important;
+  background-color: #ffffff20;
   border: 2px solid white;
   margin-bottom: 30px;
+}
+
+span.swiper-pagination-bullet-active {
+  background-color: white !important;
 }
