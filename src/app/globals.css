@@ -7,6 +7,16 @@
   padding-inline: 2rem;
 }
 
+.two-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 lg:gap-4;
+}
+.three-grid {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-4;
+}
+.my-container {
+  @apply container mx-auto px-2 lg:px-5;
+}
+
 @layer base {
   :root {
     --primaryColor: theme("colors.primary");
@@ -86,16 +96,6 @@
   color: white !important;
   font-size: 18px !important;
   scale: 0.6;
-}
-
-.two-grid {
-  @apply grid grid-cols-1 lg:grid-cols-2 lg:gap-4;
-}
-.three-grid {
-  @apply grid grid-cols-1 lg:grid-cols-3 gap-4;
-}
-.my-container {
-  @apply container mx-auto px-2 lg:px-5;
 }
 
 span.swiper-pagination-bullet {

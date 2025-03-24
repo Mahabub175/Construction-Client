@@ -28,7 +28,7 @@ const Banner = () => {
           clickable: true,
         }}
         navigation={true}
-        className="mySwiper lg:max-h-[700px]"
+        className="mySwiper lg:max-h-[500px] xxl:max-h-[700px]"
       >
         {activeSliders?.map((item) => {
           return (
@@ -42,7 +42,7 @@ const Banner = () => {
                   alt={item?.name ?? "banner"}
                   width={2500}
                   height={700}
-                  className="w-full lg:object-contain h-[250px] lg:h-full"
+                  className="w-full h-[250px] md:h-[350px] lg:-[500px] xxl:h-[700px] object-cover"
                   priority
                 />
                 <div className="absolute z-10 top-20 lg:top-[45%] left-[5%]">
