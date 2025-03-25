@@ -64,7 +64,6 @@ const ContactForm = () => {
         <CustomInput
           label={"Email"}
           name="email"
-          required={true}
           type={"email"}
           prefix={<MailOutlined />}
         />
@@ -81,7 +80,7 @@ const ContactForm = () => {
         required={true}
         type={"textarea"}
       />
-      <SubmitButton text={"Send Message"} loading={loading} />
+      <SubmitButton text={"Send Message"} loading={loading} fullWidth />
     </CustomForm>
   );
 };
