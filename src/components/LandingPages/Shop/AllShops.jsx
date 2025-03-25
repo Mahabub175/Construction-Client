@@ -1,12 +1,17 @@
 "use client";
 
+import LoadingAnimation from "@/components/Shared/LoadingAnimation";
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 import { useGetAllShopsQuery } from "@/redux/services/shop/shopApi";
-import { Image } from "antd";
+import { Empty, Image } from "antd";
 
 const AllShops = () => {
-  const { data: shopData } = useGetAllShopsQuery();
+  const { data: shopData, isLoading } = useGetAllShopsQuery();
   const { data: globalData } = useGetAllGlobalSettingQuery();
+
+  if (isLoading) {
+    return <LoadingAnimation />;
+  }
 
   const whatsAppUrl = `https://wa.me/${globalData?.results?.businessWhatsapp}`;
 
@@ -29,6 +34,17 @@ const AllShops = () => {
 
     return `${whatsAppUrl}?text=${encodeURIComponent(message)}`;
   };
+
+  if (!activeShops || activeShops.length === 0) {
+    return (
+      <section className="mb-20">
+        <div className="text-center text-lg text-gray-600 mt-20">
+          <Empty size="large" />
+          No Shop available.
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="mb-20">

@@ -2,6 +2,7 @@
 
 import LoadingAnimation from "@/components/Shared/LoadingAnimation";
 import { useGetAllGalleriesQuery } from "@/redux/services/gallery/galleryApi";
+import { Empty } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import {
@@ -40,6 +41,17 @@ const AllGallery = () => {
       prevIndex === activeGalleries?.length - 1 ? 0 : prevIndex + 1
     );
   };
+
+  if (!activeGalleries || activeGalleries.length === 0) {
+    return (
+      <section className="mb-20">
+        <div className="text-center text-lg text-gray-600 mt-20">
+          <Empty size="large" />
+          No Gallery Image available.
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="mb-20 mt-2">
