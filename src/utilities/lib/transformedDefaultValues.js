@@ -62,6 +62,13 @@ export const transformDefaultValues = (defaultValue, selectedData) => {
             "storeImage",
             "mainImage",
             "images",
+            "blogBanner",
+            "aboutBanner",
+            "serviceBanner",
+            "workBanner",
+            "galleryBanner",
+            "shopBanner",
+            "contactBanner",
           ].some((substring) => key.includes(substring)) &&
           !excludedKeys.includes(key)
         ) {

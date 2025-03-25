@@ -45,6 +45,41 @@ const AdminAccountSetting = () => {
           values?.favicon?.[0].originFileObj
         );
       }
+      if (!values?.aboutBanner?.[0].url) {
+        submittedData.aboutBanner = await compressImage(
+          values?.aboutBanner?.[0].originFileObj
+        );
+      }
+      if (!values?.serviceBanner?.[0].url) {
+        submittedData.serviceBanner = await compressImage(
+          values?.serviceBanner?.[0].originFileObj
+        );
+      }
+      if (!values?.galleryBanner?.[0].url) {
+        submittedData.galleryBanner = await compressImage(
+          values?.galleryBanner?.[0].originFileObj
+        );
+      }
+      if (!values?.workBanner?.[0].url) {
+        submittedData.workBanner = await compressImage(
+          values?.workBanner?.[0].originFileObj
+        );
+      }
+      if (!values?.contactBanner?.[0].url) {
+        submittedData.contactBanner = await compressImage(
+          values?.contactBanner?.[0].originFileObj
+        );
+      }
+      if (!values?.shopBanner?.[0].url) {
+        submittedData.shopBanner = await compressImage(
+          values?.shopBanner?.[0].originFileObj
+        );
+      }
+      if (!values?.blogBanner?.[0].url) {
+        submittedData.blogBanner = await compressImage(
+          values?.blogBanner?.[0].originFileObj
+        );
+      }
       const updatedUserData = new FormData();
       appendToFormData(submittedData, updatedUserData);
 
@@ -91,13 +126,56 @@ const AdminAccountSetting = () => {
           name="logo"
           required={true}
         />
-        <FileUploader
-          defaultValue={data?.results?.favicon}
-          label="Website Favicon"
-          name="favicon"
-          required={true}
-        />
+
         <div className="two-grid">
+          <FileUploader
+            defaultValue={data?.results?.favicon}
+            label="Website Favicon"
+            name="favicon"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.aboutBanner}
+            label="Website About Banner"
+            name="aboutBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.serviceBanner}
+            label="Website Service Banner"
+            name="serviceBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.workBanner}
+            label="Website Work Banner"
+            name="workBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.galleryBanner}
+            label="Website Gallery Banner"
+            name="galleryBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.shopBanner}
+            label="Website Shop Banner"
+            name="shopBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.contactBanner}
+            label="Website Contact Banner"
+            name="contactBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.blogBanner}
+            label="Website Blog Banner"
+            name="blogBanner"
+            required={true}
+          />
           <CustomInput
             name={"businessNumber"}
             label={"Business Number"}
