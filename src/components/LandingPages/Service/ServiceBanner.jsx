@@ -6,13 +6,13 @@ import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/glob
 const ServiceBanner = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
   return (
-    <div>
+    <>
       <PageBanner
         image={globalData?.results?.serviceBanner}
         title="SERVICES"
         subtitle={"LUXURY RESIDENCES  | COMMERCIAL  | HOSPITALITY"}
       />
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import ContactDetails from "@/components/LandingPages/Contact/ContactDetails";
+import ContactBanner from "@/components/LandingPages/Contact/ContactBanner";
 
 export const metadata = {
   title: "Contact - Genesis Carpentry",
@@ -8,7 +8,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <ContactDetails />
+      <ContactBanner />
     </>
   );
 };
