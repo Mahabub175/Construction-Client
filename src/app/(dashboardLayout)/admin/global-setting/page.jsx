@@ -19,6 +19,13 @@ const AdminAccountSetting = () => {
   const [fields, setFields] = useState([]);
   const { data } = useGetAllGlobalSettingQuery();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
   const [updateGlobalSetting, { isLoading }] = useUpdateGlobalSettingMutation();
 
   const onSubmit = async (values) => {

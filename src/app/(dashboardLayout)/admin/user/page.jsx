@@ -12,7 +12,7 @@ import {
 } from "@/redux/services/auth/authApi";
 import { Input, Pagination, Space, Table, Tag, Tooltip } from "antd";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
 import { toast } from "sonner";
@@ -216,14 +216,21 @@ const AdminDonation = () => {
   ];
 
   const tableData = users?.results?.map((item) => ({
-    key: item._id,
-    name: item.name ?? "N/A",
+    key: item?._id,
+    name: item?.name ?? "N/A",
     number: item?.number ?? "N/A",
     email: item?.email ?? "N/A",
     role: item?.role,
-    createdAt: dayjs(item.createdAt).format("Do MMM, YYYY"),
+    createdAt: dayjs(item?.createdAt).format("Do MMM, YYYY"),
     status: item?.status,
   }));
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="px-5">

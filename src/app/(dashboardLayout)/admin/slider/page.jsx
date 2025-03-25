@@ -22,7 +22,7 @@ import {
   Tag,
   Tooltip,
 } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -187,6 +187,13 @@ const Slider = () => {
     bottomBanner: item?.bottomBanner,
     status: item?.status,
   }));
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="px-5">

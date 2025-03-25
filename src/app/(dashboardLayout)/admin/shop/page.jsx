@@ -22,7 +22,7 @@ import {
   Tag,
   Tooltip,
 } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -168,10 +168,17 @@ const Shop = () => {
   ];
 
   const tableData = shops?.results?.map((item) => ({
-    key: item._id,
+    key: item?._id,
     attachment: item?.attachment,
     status: item?.status,
   }));
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="px-5">
