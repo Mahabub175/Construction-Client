@@ -8,8 +8,12 @@ import { useEffect } from "react";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { FaImage, FaPager, FaUser } from "react-icons/fa";
 import { GrBusinessService } from "react-icons/gr";
-import { RiGalleryFill, RiShoppingCartFill } from "react-icons/ri";
-import { TbBrandAirtable } from "react-icons/tb";
+import {
+  RiGalleryFill,
+  RiShoppingCartFill,
+  RiUserSettingsFill,
+} from "react-icons/ri";
+import { TbSettingsFilled } from "react-icons/tb";
 
 const Dashboard = () => {
   useEffect(() => {
@@ -70,12 +74,12 @@ const Dashboard = () => {
             href={"/admin/user"}
           />
           <DashboardCards
-            icon={TbBrandAirtable}
+            icon={RiUserSettingsFill}
             title="Account Setting"
             href={"/admin/account-setting"}
           />
           <DashboardCards
-            icon={TbBrandAirtable}
+            icon={TbSettingsFilled}
             title="Global Settings"
             href={"/admin/global-setting"}
           />
