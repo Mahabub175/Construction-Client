@@ -1,6 +1,6 @@
-import AboutBanner from "@/components/LandingPages/About-us/AboutBanner";
-import Specialize from "@/components/LandingPages/About-us/Specialize";
-import React from "react";
+import AboutBanner from "@/components/LandingPages/AboutUs/AboutBanner";
+import AboutDetails from "@/components/LandingPages/AboutUs/AboutDetails";
+import FeaturedGallery from "@/components/Shared/FeaturedGallery";
 
 export const metadata = {
   title: "About Us - Genesis Carpentry",
@@ -8,10 +8,13 @@ export const metadata = {
 };
 
 const page = () => {
-  return <div>
-    <AboutBanner/>
-    <Specialize/>
-  </div>;
+  return (
+    <>
+      <AboutBanner />
+      <AboutDetails />
+      <FeaturedGallery />
+    </>
+  );
 };
 
 export default page;
