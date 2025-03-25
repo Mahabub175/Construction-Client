@@ -31,7 +31,7 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
     </Tag>
   );
 
-  const formatDate = (value) => dayjs(value).format("Do MMMM, YYYY");
+  const formatDate = (value) => dayjs(value).format("D MMMM, YYYY");
 
   const renderValue = (key, value) => {
     if (key.toLowerCase() === "content") {
@@ -142,9 +142,9 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
                   <Image src={value} alt={key} style={{ maxWidth: 200 }} />
                 </Descriptions.Item>
               ))}
-            <Descriptions.Item label={formatLabel("Images")}>
-              {details?.images?.length > 0 &&
-                details?.images?.map((image, index) => (
+            {details?.images?.length > 0 && (
+              <Descriptions.Item label={formatLabel("Images")}>
+                {details.images.map((image, index) => (
                   <div
                     key={index}
                     style={{
@@ -155,14 +155,15 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
                   >
                     <Image
                       src={image}
-                      alt={index}
+                      alt={`Image ${index}`}
                       width={100}
                       height={100}
                       className="object-cover"
                     />
                   </div>
                 ))}
-            </Descriptions.Item>
+              </Descriptions.Item>
+            )}
           </Descriptions>
 
           <div className="flex justify-end mt-10">
