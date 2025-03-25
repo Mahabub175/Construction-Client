@@ -2,6 +2,7 @@
 
 import DashboardCards from "@/components/Dashboard/DashboardCards";
 import LogoutButton from "@/components/Dashboard/LogoutButton";
+import LoadingAnimation from "@/components/Shared/LoadingAnimation";
 import { useGetAdminDashboardQuery } from "@/redux/services/dashboard/dashboardApi";
 import { useEffect } from "react";
 import { BsPersonWorkspace } from "react-icons/bs";
@@ -18,7 +19,15 @@ const Dashboard = () => {
     });
   });
 
-  const { data: dashboardData } = useGetAdminDashboardQuery();
+  const {
+    data: dashboardData,
+    isLoading,
+    isFetching,
+  } = useGetAdminDashboardQuery();
+
+  if (isLoading || isFetching) {
+    <LoadingAnimation />;
+  }
 
   return (
     <section>
@@ -56,7 +65,7 @@ const Dashboard = () => {
         <DashboardCards
           icon={FaPager}
           title="Blogs"
-          data={dashboardData?.results?.blog || 0}
+          data={dashboardData?.results?.blogs || 0}
           href={"/admin/blog"}
         />
         <DashboardCards
