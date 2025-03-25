@@ -19,73 +19,69 @@ const Dashboard = () => {
     });
   });
 
-  const {
-    data: dashboardData,
-    isLoading,
-    isFetching,
-  } = useGetAdminDashboardQuery();
-
-  if (isLoading || isFetching) {
-    <LoadingAnimation />;
-  }
+  const { data: dashboardData, isLoading } = useGetAdminDashboardQuery();
 
   return (
     <section>
-      <div className="grid grid-cols-2 lg:grid-cols-3 xxl:grid-cols-5 gap-10">
-        <DashboardCards
-          icon={FaImage}
-          title="Sliders"
-          data={dashboardData?.results?.sliders || 0}
-          href={"/admin/slider"}
-        />
-        <DashboardCards
-          icon={GrBusinessService}
-          title="Services"
-          data={dashboardData?.results?.services || 0}
-          href={"/admin/service"}
-        />
-        <DashboardCards
-          icon={BsPersonWorkspace}
-          title="Works"
-          data={dashboardData?.results?.works || 0}
-          href={"/admin/work"}
-        />
-        <DashboardCards
-          icon={RiGalleryFill}
-          title="Gallery Images"
-          data={dashboardData?.results?.galleries || 0}
-          href={"/admin/gallery"}
-        />
-        <DashboardCards
-          icon={RiShoppingCartFill}
-          title="Shops"
-          data={dashboardData?.results?.shops || 0}
-          href={"/admin/shop"}
-        />
-        <DashboardCards
-          icon={FaPager}
-          title="Blogs"
-          data={dashboardData?.results?.blogs || 0}
-          href={"/admin/blog"}
-        />
-        <DashboardCards
-          icon={FaUser}
-          title="Users"
-          data={dashboardData?.results?.users || 0}
-          href={"/admin/user"}
-        />
-        <DashboardCards
-          icon={TbBrandAirtable}
-          title="Account Setting"
-          href={"/admin/account-setting"}
-        />
-        <DashboardCards
-          icon={TbBrandAirtable}
-          title="Global Settings"
-          href={"/admin/global-setting"}
-        />
-        <LogoutButton />
-      </div>
+      {isLoading ? (
+        <LoadingAnimation />
+      ) : (
+        <div className="grid grid-cols-2 lg:grid-cols-3 xxl:grid-cols-5 gap-10">
+          <DashboardCards
+            icon={FaImage}
+            title="Sliders"
+            data={dashboardData?.results?.sliders || 0}
+            href={"/admin/slider"}
+          />
+          <DashboardCards
+            icon={GrBusinessService}
+            title="Services"
+            data={dashboardData?.results?.services || 0}
+            href={"/admin/service"}
+          />
+          <DashboardCards
+            icon={BsPersonWorkspace}
+            title="Works"
+            data={dashboardData?.results?.works || 0}
+            href={"/admin/work"}
+          />
+          <DashboardCards
+            icon={RiGalleryFill}
+            title="Gallery Images"
+            data={dashboardData?.results?.galleries || 0}
+            href={"/admin/gallery"}
+          />
+          <DashboardCards
+            icon={RiShoppingCartFill}
+            title="Shops"
+            data={dashboardData?.results?.shops || 0}
+            href={"/admin/shop"}
+          />
+          <DashboardCards
+            icon={FaPager}
+            title="Blogs"
+            data={dashboardData?.results?.blogs || 0}
+            href={"/admin/blog"}
+          />
+          <DashboardCards
+            icon={FaUser}
+            title="Users"
+            data={dashboardData?.results?.users || 0}
+            href={"/admin/user"}
+          />
+          <DashboardCards
+            icon={TbBrandAirtable}
+            title="Account Setting"
+            href={"/admin/account-setting"}
+          />
+          <DashboardCards
+            icon={TbBrandAirtable}
+            title="Global Settings"
+            href={"/admin/global-setting"}
+          />
+          <LogoutButton />
+        </div>
+      )}
     </section>
   );
 };
