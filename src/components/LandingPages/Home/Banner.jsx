@@ -28,7 +28,7 @@ const Banner = () => {
           clickable: true,
         }}
         navigation={true}
-        className="mySwiper lg:max-h-[500px] xxl:max-h-[700px]"
+        className="mySwiper lg:max-h-[500px] xxl:max-h-[700px] banner"
       >
         {activeSliders?.map((item) => {
           return (

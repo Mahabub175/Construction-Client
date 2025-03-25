@@ -5,7 +5,7 @@ import { useGetAllWorksQuery } from "@/redux/services/work/workApi";
 import { Empty } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -21,7 +21,7 @@ const AllWorks = () => {
       {isLoading ? (
         <LoadingAnimation />
       ) : activeWorks?.length > 0 ? (
-        activeWorks?.map((work) => (
+        activeWorks?.map((work, workIndex) => (
           <div
             key={work._id}
             className="relative overflow-hidden mb-10 lg:mb-20 first:border-y-0 first:border-b border-y py-5 lg:py-10"
@@ -31,15 +31,12 @@ const AllWorks = () => {
             </h3>
 
             <Swiper
-              modules={[Autoplay, Pagination, Navigation]}
+              modules={[Autoplay, Navigation]}
               slidesPerView={3}
               loop={true}
               autoplay={{
-                delay: 2000,
+                delay: 2000 + workIndex * 500,
                 disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
               }}
               navigation={true}
               className="mySwiper"

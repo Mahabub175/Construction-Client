@@ -105,6 +105,6 @@ span.swiper-pagination-bullet {
   border: 2px solid white;
 }
 
-span.swiper-pagination-bullet-active {
+.banner span.swiper-pagination-bullet-active {
   background-color: white !important;
 }

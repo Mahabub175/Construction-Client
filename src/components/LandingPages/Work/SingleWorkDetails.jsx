@@ -1,6 +1,7 @@
 "use client";
 
 import LoadingAnimation from "@/components/Shared/LoadingAnimation";
+import PageBanner from "@/components/Shared/PageBanner";
 import { useGetSingleWorkBySlugQuery } from "@/redux/services/work/workApi";
 import Image from "next/image";
 import { useState } from "react";
@@ -40,24 +41,27 @@ const SingleWorkDetails = ({ params }) => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-2 lg:px-5 mb-20 mt-6">
-      <div className="columns-2 md:columns-3">
-        {item?.images?.map((imageUrl, index) => (
-          <div
-            key={index}
-            className="mb-5 relative group"
-            onClick={() => openModal(index)}
-          >
-            <Image
-              src={imageUrl}
-              alt={`Image ${index + 1}`}
-              width={800}
-              height={600}
-              className="w-full h-auto mb-5 rounded cursor-pointer"
-            />
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-700 ease-in-out rounded"></div>
-          </div>
-        ))}
+    <section className="mb-20 mt-2 lg:mt-6">
+      <PageBanner image={item?.mainImage} title={item?.name} />
+      <div className="max-w-7xl mx-auto px-2 lg:px-5 ">
+        <div className="columns-2 md:columns-3">
+          {item?.images?.map((imageUrl, index) => (
+            <div
+              key={index}
+              className="mb-5 relative group"
+              onClick={() => openModal(index)}
+            >
+              <Image
+                src={imageUrl}
+                alt={`Image ${index + 1}`}
+                width={800}
+                height={600}
+                className="w-full h-auto mb-5 rounded cursor-pointer"
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-700 ease-in-out rounded"></div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {isModalOpen && (
