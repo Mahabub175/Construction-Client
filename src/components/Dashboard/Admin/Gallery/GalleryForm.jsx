@@ -14,7 +14,7 @@ const GalleryForm = ({ attachment }) => {
       />
       <Form.Item name={"isFeatured"} valuePropName="checked">
         <Checkbox className="font-semibold">
-          This Gallery Image Will Be Featured.
+          This Gallery Image Will Be Featured
         </Checkbox>
       </Form.Item>
     </>

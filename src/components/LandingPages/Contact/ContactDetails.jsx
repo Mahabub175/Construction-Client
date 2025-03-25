@@ -16,8 +16,8 @@ const ContactDetails = () => {
 
   return (
     <section className="max-w-7xl mx-auto px-2 lg:px-5 mt-14 -mb-5 lg:mb-0">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <div className="col-span-2 bg-white p-5 rounded-xl shadow-xl">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-10">
+        <div className="col-span-2 bg-white p-5 rounded-xl shadow-xl mb-10 lg:mb-0">
           <h2 className="text-2xl lg:text-3xl font-medium mb-4">
             Tell Us Your Message :
           </h2>

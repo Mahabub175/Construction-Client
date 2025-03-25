@@ -101,6 +101,20 @@ const Slider = () => {
       ),
     },
     {
+      title: "Bottom Banner",
+      dataIndex: "bottomBanner",
+      key: "bottomBanner",
+      align: "center",
+      render: (item) => (
+        <Tag
+          color={item ? "green" : "blue"}
+          className="capitalize font-semibold"
+        >
+          {item ? "Active" : "Inactive"}
+        </Tag>
+      ),
+    },
+    {
       title: "Status",
       dataIndex: "status",
       key: "status",
@@ -170,6 +184,7 @@ const Slider = () => {
   const tableData = sliders?.results?.map((item) => ({
     key: item._id,
     attachment: item?.attachment,
+    bottomBanner: item?.bottomBanner,
     status: item?.status,
   }));
 
