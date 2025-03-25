@@ -11,12 +11,16 @@ const WorkForm = ({ attachment }) => {
         name={"description"}
         type={"textarea"}
       />
+      <span className="text-primary">
+        *Please Upload 2000x450 size images for best result*
+      </span>
       <FileUploader
         defaultValue={attachment}
         required={true}
         label={"Project Main Image"}
         name={"mainImage"}
       />
+
       <MultipleFileUploader
         name={"images"}
         label={"Project Images"}

@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 import Link from "next/link";
 
 const Banner = () => {
@@ -17,9 +18,10 @@ const Banner = () => {
   return (
     <section className="relative mb-10">
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
         slidesPerView={1}
         loop={true}
+        effect="fade"
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
