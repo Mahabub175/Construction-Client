@@ -4,7 +4,7 @@ import AntDProvider from "@/components/Shared/AntDProvider";
 import { Raleway } from "next/font/google";
 
 const ralewayFont = Raleway({
-  weight: ["400", "500", "700"],
+  weight: ["100", "300" ,"400", "500", "700"],
   subsets: ["latin"],
 });
 

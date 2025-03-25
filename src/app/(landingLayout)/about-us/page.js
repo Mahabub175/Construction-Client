@@ -1,3 +1,5 @@
+import AboutBanner from "@/components/LandingPages/About-us/AboutBanner";
+import Specialize from "@/components/LandingPages/About-us/Specialize";
 import React from "react";
 
 export const metadata = {
@@ -6,7 +8,10 @@ export const metadata = {
 };
 
 const page = () => {
-  return <div>This is about us page</div>;
+  return <div>
+    <AboutBanner/>
+    <Specialize/>
+  </div>;
 };
 
 export default page;
