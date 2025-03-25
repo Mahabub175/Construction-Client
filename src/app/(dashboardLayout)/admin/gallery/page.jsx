@@ -1,17 +1,17 @@
 "use client";
 
 import { paginationNumbers } from "@/assets/data/paginationData";
-import SliderCreate from "@/components/Dashboard/Admin/Slider/SliderCreate";
-import SliderEdit from "@/components/Dashboard/Admin/Slider/SliderEdit";
+import GalleryCreate from "@/components/Dashboard/Admin/Gallery/GalleryCreate";
+import GalleryEdit from "@/components/Dashboard/Admin/Gallery/GalleryEdit";
 import DeleteModal from "@/components/Reusable/Modal/DeleteModal";
 import DetailsModal from "@/components/Reusable/Modal/DetailsModal";
 import TableHeader from "@/components/Reusable/Table/TableHeader";
 import {
-  useDeleteBulkSliderMutation,
-  useDeleteSliderMutation,
-  useGetSingleSliderQuery,
-  useGetSlidersQuery,
-} from "@/redux/services/slider/sliderApi";
+  useDeleteBulkGalleryMutation,
+  useDeleteGalleryMutation,
+  useGetGalleriesQuery,
+  useGetSingleGalleryQuery,
+} from "@/redux/services/gallery/galleryApi";
 import {
   Dropdown,
   Image,
@@ -28,7 +28,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { TbListDetails } from "react-icons/tb";
 
-const Slider = () => {
+const Gallery = () => {
   const [open, setOpen] = useState(false);
   const [openSearch, setOpenSearch] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
@@ -40,13 +40,13 @@ const Slider = () => {
   const [search, setSearch] = useState("");
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
-  const { data: sliders, isFetching } = useGetSlidersQuery({
+  const { data: galleries, isFetching } = useGetGalleriesQuery({
     page: currentPage,
     limit: pageSize,
     search,
   });
 
-  const { data: sliderData } = useGetSingleSliderQuery(itemId, {
+  const { data: galleryData } = useGetSingleGalleryQuery(itemId, {
     skip: !itemId,
   });
 
@@ -64,8 +64,8 @@ const Slider = () => {
     onChange: onSelectChange,
   };
 
-  const [deleteSlider] = useDeleteSliderMutation();
-  const [deleteBulkSlider] = useDeleteBulkSliderMutation();
+  const [deleteGallery] = useDeleteGalleryMutation();
+  const [deleteBulkGallery] = useDeleteBulkGalleryMutation();
 
   const handleMenuClick = (key, id) => {
     setItemId(id);
@@ -93,11 +93,26 @@ const Slider = () => {
             item ??
             "https://thumbs.dreamstime.com/b/demo-demo-icon-139882881.jpg"
           }
-          alt={"Slider Image"}
+          alt={"Gallery Image"}
           width={50}
           height={50}
           className="object-cover rounded"
         />
+      ),
+    },
+    { title: "Name", dataIndex: "name", key: "name" },
+    {
+      title: "Featured",
+      dataIndex: "featured",
+      key: "featured",
+      align: "center",
+      render: (item) => (
+        <Tag
+          color={item ? "green" : "blue"}
+          className="capitalize font-semibold"
+        >
+          {item ? "Featured" : "Not Featured"}
+        </Tag>
       ),
     },
     {
@@ -167,9 +182,11 @@ const Slider = () => {
     },
   ];
 
-  const tableData = sliders?.results?.map((item) => ({
+  const tableData = galleries?.results?.map((item) => ({
     key: item._id,
     attachment: item?.attachment,
+    name: item?.name ?? "N/A",
+    featured: item?.isFeatured,
     status: item?.status,
   }));
 
@@ -177,13 +194,13 @@ const Slider = () => {
     <div className="px-5">
       <TableHeader
         setOpen={setOpen}
-        title={"Slider"}
+        title={"Gallery"}
         selectedRowKeys={selectedRowKeys}
         itemId={itemId}
         setSearch={setSearch}
         openSearch={openSearch}
         setOpenSearch={setOpenSearch}
-        deleteBulk={deleteBulkSlider}
+        deleteBulk={deleteBulkGallery}
         setSelectedRowKeys={setSelectedRowKeys}
       />
 
@@ -198,7 +215,7 @@ const Slider = () => {
 
       <Pagination
         className="flex justify-end items-center !mt-10"
-        total={sliders?.meta?.totalCount}
+        total={galleries?.meta?.totalCount}
         current={currentPage}
         onChange={handlePageChange}
         pageSize={pageSize}
@@ -207,24 +224,24 @@ const Slider = () => {
         simple
       />
 
-      <SliderCreate open={open} setOpen={setOpen} />
-      <SliderEdit itemId={itemId} open={openEdit} setOpen={setOpenEdit} />
+      <GalleryCreate open={open} setOpen={setOpen} />
+      <GalleryEdit itemId={itemId} open={openEdit} setOpen={setOpenEdit} />
       <DetailsModal
         itemId={itemId}
         modalOpen={detailsModalOpen}
         setModalOpen={setDetailsModalOpen}
-        title={"Slider"}
-        details={sliderData}
+        title={"Gallery"}
+        details={galleryData}
       />
       <DeleteModal
         itemId={itemId}
         modalOpen={deleteModalOpen}
         setModalOpen={setDeleteModalOpen}
-        text={"slider"}
-        func={deleteSlider}
+        text={"gallery"}
+        func={deleteGallery}
       />
     </div>
   );
 };
 
-export default Slider;
+export default Gallery;

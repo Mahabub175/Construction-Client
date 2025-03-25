@@ -93,7 +93,7 @@ const Service = () => {
             item ??
             "https://thumbs.dreamstime.com/b/demo-demo-icon-139882881.jpg"
           }
-          alt={"brand image"}
+          alt={"Service Image"}
           width={50}
           height={50}
           className="object-cover rounded"
