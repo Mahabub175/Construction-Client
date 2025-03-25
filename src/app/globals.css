@@ -109,3 +109,22 @@ span.swiper-pagination-bullet {
 span.swiper-pagination-bullet-active {
   background-color: white !important;
 }
+
+.about_background{
+  background: url('../../src/assets/images/a-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+.first-p-imge .about-imge{
+  background: url('../../src/assets/images/special.png');
+  background-size: cover;
+  background-position: center;
+  
+}
+.second-p-imge .about-imge{
+  background: url('../../src/assets/images/specia2.png');
+  background-size: cover;
+  background-position: center;
+}
