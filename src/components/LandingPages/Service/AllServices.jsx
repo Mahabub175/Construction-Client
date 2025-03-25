@@ -11,14 +11,14 @@ const AllServices = () => {
 
   const activeServices = serviceData?.results?.filter((item) => item?.status);
   return (
-    <section className="-mt-10 lg:mt-0 mb-20 my-container">
+    <section className="my-container">
       {isLoading ? (
         <LoadingAnimation />
       ) : activeServices?.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-10 justify-center items-start   mt-10">
           {activeServices?.map((item) => (
             <div
-              key={item?.id}
+              key={item?._id}
               className="overflow-hidden relative flex flex-col lg:w-[315px] mx-auto group"
             >
               <div className="overflow-hidden">

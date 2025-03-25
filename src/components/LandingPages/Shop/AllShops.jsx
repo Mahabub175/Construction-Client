@@ -47,7 +47,7 @@ const AllShops = () => {
   }
 
   return (
-    <section className="mb-20">
+    <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap justify-center items-center gap-8">
           {activeShops?.map((shop) => (
@@ -67,7 +67,7 @@ const AllShops = () => {
 
               <div className="p-4 text-center">
                 {shop?.name && (
-                  <h3 className="text-sm -mt-4 mb-2 font-medium text-primary">
+                  <h3 className="-mt-4 mb-2 font-medium text-primary">
                     {shop.name}
                   </h3>
                 )}

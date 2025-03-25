@@ -17,7 +17,7 @@ const AllWorks = () => {
   const activeWorks = workData?.results?.filter((item) => item?.status);
 
   return (
-    <section className="mb-20 my-container -mt-5 lg:-mt-10">
+    <section className="my-container -mt-5 lg:-mt-10">
       {isLoading ? (
         <LoadingAnimation />
       ) : activeWorks?.length > 0 ? (
