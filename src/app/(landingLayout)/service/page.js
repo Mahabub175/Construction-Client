@@ -1,4 +1,5 @@
 import AllServices from "@/components/LandingPages/Service/AllServices";
+import ServiceBanner from "@/components/LandingPages/Service/ServiceBanner";
 
 export const metadata = {
   title: "Service - Genesis Carpentry",
@@ -8,6 +9,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <ServiceBanner />
       <AllServices />
     </>
   );

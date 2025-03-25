@@ -7,10 +7,10 @@ const PageBanner = ({ image, title, subtitle }) => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative z-10">
-        <h2 className="text-white text-3xl lg:text-5xl lg:font-medium">
+        <h2 className="text-white text-3xl lg:text-6xl leading-loose tracking-widest uppercase">
           {title}
         </h2>
-        {subtitle && <p className="mt-2 text-lg">{subtitle}</p>}
+        {subtitle && <p className="lg:mt-4 text-sm">{subtitle}</p>}
       </div>
     </section>
   );

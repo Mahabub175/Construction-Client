@@ -1,4 +1,5 @@
 import AllWorks from "@/components/LandingPages/Work/AllWorks";
+import WorkBanner from "@/components/LandingPages/Work/WorkBanner";
 
 export const metadata = {
   title: "Work - Genesis Carpentry",
@@ -8,6 +9,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <WorkBanner />
       <AllWorks />
     </>
   );
