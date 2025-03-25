@@ -1,5 +1,6 @@
 import AllShops from "@/components/LandingPages/Shop/AllShops";
 import ShopBanner from "@/components/LandingPages/Shop/ShopBanner";
+import FeaturedGallery from "@/components/Shared/FeaturedGallery";
 
 export const metadata = {
   title: "Shop - Genesis Carpentry",
@@ -11,6 +12,7 @@ const page = () => {
     <>
       <ShopBanner />
       <AllShops />
+      <FeaturedGallery />
     </>
   );
 };

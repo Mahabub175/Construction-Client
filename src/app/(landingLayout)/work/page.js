@@ -1,5 +1,6 @@
 import AllWorks from "@/components/LandingPages/Work/AllWorks";
 import WorkBanner from "@/components/LandingPages/Work/WorkBanner";
+import FeaturedGallery from "@/components/Shared/FeaturedGallery";
 
 export const metadata = {
   title: "Work - Genesis Carpentry",
@@ -11,6 +12,7 @@ const page = () => {
     <>
       <WorkBanner />
       <AllWorks />
+      <FeaturedGallery />
     </>
   );
 };
