@@ -1,4 +1,5 @@
-import React from "react";
+import AllGallery from "@/components/LandingPages/Gallery/AllGallery";
+import GalleryBanner from "@/components/LandingPages/Gallery/GalleryBanner";
 
 export const metadata = {
   title: "Gallery - Genesis Carpentry",
@@ -6,7 +7,12 @@ export const metadata = {
 };
 
 const page = () => {
-  return <div>This is gallery page</div>;
+  return (
+    <>
+      <GalleryBanner />
+      <AllGallery />
+    </>
+  );
 };
 
 export default page;

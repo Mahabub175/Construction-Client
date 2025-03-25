@@ -12,9 +12,7 @@ const AllBlogs = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { data: blogsData, isLoading } = useGetAllBlogsQuery();
 
-  const activeBlogs = blogsData?.results?.filter(
-    (item) => item?.status !== "Inactive"
-  );
+  const activeBlogs = blogsData?.results?.filter((item) => item?.status);
 
   const filteredBlogs = activeBlogs?.filter((blog) =>
     blog.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -44,7 +42,7 @@ const AllBlogs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-10 justify-center items-center mt-10">
           {filteredBlogs.map((item) => (
             <div
-              key={item?.id}
+              key={item?._id}
               className="bg-white rounded-xl shadow-lg overflow-hidden relative flex flex-col h-[500px] lg:w-[400px] mx-auto group"
             >
               <div className="overflow-hidden">
@@ -59,13 +57,13 @@ const AllBlogs = () => {
 
               <div className="p-6 flex flex-col flex-grow">
                 <h4 className="text-xl font-bold mb-3">{item?.name}</h4>
-                <p className="text-gray-600 text-lg leading-relaxed flex-grow">
+                <p className="text-gray-600 leading-relaxed flex-grow">
                   {item?.shortDescription?.slice(0, 100)}
                 </p>
 
                 <div className="mt-auto pt-4">
                   <Link href={`/blog/${item?.slug}`}>
-                    <button className="w-full py-3 font-medium rounded-xl bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
+                    <button className="w-full py-3 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
                       Read More
                     </button>
                   </Link>

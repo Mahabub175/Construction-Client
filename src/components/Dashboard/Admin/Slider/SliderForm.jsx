@@ -13,6 +13,9 @@ const SliderForm = ({ attachment }) => {
         name="attachment"
         required={true}
       />
+      <span className="text-primary">
+        *Please Upload 2000x700 size images for best result*
+      </span>
     </>
   );
 };

@@ -4,7 +4,6 @@ import { Button, Layout, Menu } from "antd";
 import { useState } from "react";
 import { TbArrowBadgeRight } from "react-icons/tb";
 import { usePathname } from "next/navigation";
-import "./sidebar.css";
 import { sidebarItemsGenerator } from "@/utilities/lib/sidebarItemsGenerator";
 import { userSidebarRoutes } from "@/routes/user.routes";
 import { adminSidebarRoutes } from "@/routes/admin.routes";

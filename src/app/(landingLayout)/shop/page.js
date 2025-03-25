@@ -1,4 +1,6 @@
-import React from "react";
+import AllShops from "@/components/LandingPages/Shop/AllShops";
+import ShopBanner from "@/components/LandingPages/Shop/ShopBanner";
+import FeaturedGallery from "@/components/Shared/FeaturedGallery";
 
 export const metadata = {
   title: "Shop - Genesis Carpentry",
@@ -6,7 +8,13 @@ export const metadata = {
 };
 
 const page = () => {
-  return <div>This is shop page</div>;
+  return (
+    <>
+      <ShopBanner />
+      <AllShops />
+      <FeaturedGallery />
+    </>
+  );
 };
 
 export default page;

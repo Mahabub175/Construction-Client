@@ -18,7 +18,7 @@ import CustomModal from "@/components/Reusable/Modal/CustomModal.jsx";
 const SliderEdit = ({ open, setOpen, itemId }) => {
   const [fields, setFields] = useState([]);
 
-  const { data: sliderData, isFetching: isCategoryFetching } =
+  const { data: sliderData, isFetching: isSliderFetching } =
     useGetSingleSliderQuery(itemId, {
       skip: !itemId,
     });
@@ -44,12 +44,12 @@ const SliderEdit = ({ open, setOpen, itemId }) => {
         delete submittedData.attachment;
       }
 
-      const updatedCategoryData = new FormData();
-      appendToFormData(submittedData, updatedCategoryData);
+      const updatedSliderData = new FormData();
+      appendToFormData(submittedData, updatedSliderData);
 
       const updatedData = {
         id: itemId,
-        data: updatedCategoryData,
+        data: updatedSliderData,
       };
 
       const res = await updateSlider(updatedData);
@@ -77,7 +77,7 @@ const SliderEdit = ({ open, setOpen, itemId }) => {
       open={open}
       setOpen={setOpen}
       title="Edit Slider"
-      loading={isCategoryFetching}
+      loading={isSliderFetching}
     >
       <CustomForm onSubmit={onSubmit} fields={fields}>
         <SliderForm attachment={sliderData?.attachment} />

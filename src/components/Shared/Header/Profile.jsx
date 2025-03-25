@@ -70,7 +70,7 @@ const Profile = () => {
           <Image
             src={globalData?.results?.logo ?? logo}
             alt="logo"
-            height={40}
+            height={100}
             width={40}
             className="w-full h-12"
           />
