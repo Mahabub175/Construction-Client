@@ -11,6 +11,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import logo from "@/assets/images/logo-black.png";
 
 const Footer = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
@@ -65,7 +66,7 @@ const Footer = () => {
 
             <Link href={"/"}>
               <Image
-                src={globalData?.results?.logo}
+                src={globalData?.results?.logo ?? logo}
                 alt="logo"
                 width={200}
                 height={200}

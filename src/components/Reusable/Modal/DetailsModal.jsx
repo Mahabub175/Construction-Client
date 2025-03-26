@@ -16,7 +16,6 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
   const handleCloseModal = () => {
     setModalOpen(false);
   };
-
   const excludedKeys = details ? ["__v", "updatedAt", "_id", "images"] : [];
 
   const formatStatus = (value) => (
@@ -25,15 +24,13 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
     </Tag>
   );
 
-  const formatTrending = (value) => (
-    <Tag color={value ? "blue" : "red"} className="capitalize">
-      {value ? "Trending" : "Not Trending"}
-    </Tag>
-  );
-
   const formatDate = (value) => dayjs(value).format("D MMMM, YYYY");
 
   const renderValue = (key, value) => {
+    if (typeof value === "boolean") {
+      return formatStatus(value);
+    }
+
     if (key.toLowerCase() === "content") {
       return <div dangerouslySetInnerHTML={{ __html: value }} />;
     }
@@ -130,8 +127,6 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
               <Descriptions.Item key={key} label={formatLabel(key)}>
                 {key === "status"
                   ? formatStatus(value)
-                  : key === "trending"
-                  ? formatTrending(value)
                   : renderValue(key, value)}
               </Descriptions.Item>
             ))}
