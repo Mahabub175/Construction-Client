@@ -1,4 +1,6 @@
 import Banner from "@/components/LandingPages/Home/Banner";
+import HomeAbout from "@/components/LandingPages/Home/HomeAbout";
+import HomeContact from "@/components/LandingPages/Home/HomeContact";
 import NewsletterBanner from "@/components/LandingPages/Home/NewsletterBanner";
 import Services from "@/components/LandingPages/Home/Services";
 import WhyUs from "@/components/LandingPages/Home/WhyUs";
@@ -13,9 +15,11 @@ const page = async () => {
   return (
     <div className="overflow-x-hidden">
       <Banner />
+      <HomeAbout />
       <WhyUs />
       <Services />
       <FeaturedGallery />
+      <HomeContact />
       <NewsletterBanner />
     </div>
   );

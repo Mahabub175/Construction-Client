@@ -5,7 +5,7 @@ import { sendGTMEvent } from "@next/third-parties/google";
 
 const LinkButton = ({ href, children }) => {
   return (
-    <Link href={href}>
+    <Link href={href ?? "/"}>
       <button
         className="w-full"
         onClick={() =>

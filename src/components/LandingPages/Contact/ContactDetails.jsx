@@ -37,7 +37,7 @@ const ContactDetails = () => {
             <div className="flex flex-col gap-2 mt-4">
               <p className="font-bold">Our address information:</p>
               <Link
-                href={globalData?.results?.businessLocation}
+                href={globalData?.results?.businessLocation ?? "/"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline hover:text-primary duration-300"
@@ -45,7 +45,7 @@ const ContactDetails = () => {
                 {globalData?.results?.businessAddress}
               </Link>
               <Link
-                href={`tel:${globalData?.results?.businessNumber}`}
+                href={`tel:${globalData?.results?.businessNumber ?? "/"}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline hover:text-primary duration-300"
@@ -55,21 +55,21 @@ const ContactDetails = () => {
             </div>
             <div className="flex items-center gap-4 mt-4">
               <Link
-                href={globalData?.results?.businessFacebook}
+                href={globalData?.results?.businessFacebook ?? "/"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaFacebook className="text-4xl bg-primary p-2 rounded-full text-white hover:scale-110 duration-300" />
               </Link>
               <Link
-                href={globalData?.results?.businessLinkedin}
+                href={globalData?.results?.businessLinkedin ?? "/"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin className="text-4xl bg-primary p-2 rounded-full text-white hover:scale-110 duration-300" />
               </Link>
               <Link
-                href={globalData?.results?.businessInstagram}
+                href={globalData?.results?.businessInstagram ?? "/"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -83,7 +83,7 @@ const ContactDetails = () => {
                 <FaWhatsapp className="text-4xl bg-primary p-2 rounded-full text-white hover:scale-110 duration-300" />
               </Link>
               <Link
-                href={globalData?.results?.businessTwitter}
+                href={globalData?.results?.businessTwitter ?? "/"}
                 target="_blank"
                 rel="noopener noreferrer"
               >

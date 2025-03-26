@@ -4,7 +4,7 @@ import React from "react";
 const DashboardCards = ({ icon, title, data, href }) => {
   return (
     <Link
-      href={href}
+      href={href ?? "/"}
       className="bg-white p-5 rounded-xl shadow-xl text-base font-semibold text-end flex flex-col justify-center lg:justify-around items-center gap-2 hover:bg-primary hover:text-white group transition-all duration-300"
     >
       {React.createElement(icon, {

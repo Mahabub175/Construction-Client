@@ -26,21 +26,21 @@ const Footer = () => {
               </h2>
               <div className="text-white text-3xl flex gap-6 cursor-pointer justify-center">
                 <Link
-                  href={globalData?.results?.businessFacebook}
+                  href={globalData?.results?.businessFacebook ?? "/"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaFacebook className="hover:text-primary duration-300 transform hover:scale-110" />
                 </Link>
                 <Link
-                  href={globalData?.results?.businessLinkedin}
+                  href={globalData?.results?.businessLinkedin ?? "/"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaLinkedin className="hover:text-primary duration-300 transform hover:scale-110" />
                 </Link>
                 <Link
-                  href={globalData?.results?.businessInstagram}
+                  href={globalData?.results?.businessInstagram ?? "/"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -54,7 +54,7 @@ const Footer = () => {
                   <FaWhatsapp className="hover:text-primary duration-300 transform hover:scale-110" />
                 </Link>
                 <Link
-                  href={globalData?.results?.businessTwitter}
+                  href={globalData?.results?.businessTwitter ?? "/"}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
