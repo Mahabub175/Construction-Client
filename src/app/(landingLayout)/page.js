@@ -13,7 +13,7 @@ export const metadata = {
 
 const page = async () => {
   return (
-    <div className="overflow-x-hidden">
+    <>
       <Banner />
       <HomeAbout />
       <WhyUs />
@@ -21,7 +21,7 @@ const page = async () => {
       <FeaturedGallery />
       <HomeContact />
       <NewsletterBanner />
-    </div>
+    </>
   );
 };
 

@@ -76,7 +76,7 @@ const Navbar = () => {
               globalData={globalData}
             />
           </div>
-          <div className="hidden lg:block">
+          <div className="hidden lg:block mt-0 lg:-mt-[3.2rem] xl:mt-0">
             {user ? (
               <div className="flex items-center gap-2">
                 <Popover
@@ -124,6 +124,7 @@ const Navbar = () => {
           <Menu
             onClick={onClick}
             selectedKeys={[current]}
+            defaultSelectedKeys={[current]}
             mode="inline"
             items={menuItems}
             style={{
