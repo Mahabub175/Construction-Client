@@ -19,9 +19,9 @@ const AllServices = () => {
           {activeServices?.map((item) => (
             <div
               key={item?._id}
-              className="overflow-hidden relative flex flex-col lg:w-[315px] mx-auto group"
+              className="relative flex flex-col lg:w-[315px] mx-auto group"
             >
-              <div className="overflow-hidden">
+              <div className="overflow-hidden rounded">
                 <Image
                   src={item?.attachment}
                   alt={item?.title ?? "Service Image"}
