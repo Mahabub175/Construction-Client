@@ -16,12 +16,12 @@ const Services = () => {
       {isLoading ? (
         <LoadingAnimation />
       ) : activeServices?.length > 0 ? (
-        <div className="flex flex-wrap gap-10 justify-center items-start mt-14">
+        <div className="flex flex-wrap gap-5 lg:gap-10 justify-center items-start mt-14">
           {activeServices?.map((item) => (
             <Link
               href={`/work`}
               key={item?._id}
-              className="relative flex flex-col w-[150px] lg:w-[315px] mx-auto group"
+              className="relative flex flex-col w-[156px] lg:w-[315px] mx-auto group"
             >
               <div className="overflow-hidden rounded">
                 <Image

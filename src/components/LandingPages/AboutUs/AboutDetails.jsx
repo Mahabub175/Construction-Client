@@ -31,7 +31,7 @@ const AboutDetails = () => {
             proudly offers some of the finest handcrafted woodwork.
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
-            For several years Robert Carpentry has provided its services to a
+            For several years Genesis Carpentry has provided its services to a
             wide variety of Luxury Residences, Hotels & Condominium,
             Restaurants, Stores and many more customers throughout South Florida
             and the Caribbean.
@@ -62,13 +62,13 @@ const AboutDetails = () => {
             capabilities provide us with ability to work with home and business
             owners, architects and designers. We work with contractors during
             the process, developing drawings, creating and providing samples for
-            our customer. Outstanding customer service is our goal at Robert
+            our customer. Outstanding customer service is our goal at Genesis
             Carpentry, We live by the rules that customer satisfaction is our
             primary and foremost goal.
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
             Our attention to detail is shown in our day to day operations, from
-            our finishes to our interaction with customers, at Robert Carpentry
+            our finishes to our interaction with customers, at Genesis Carpentry
             every customer is personally attended by one of the owners.
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest">
