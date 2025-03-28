@@ -6,7 +6,7 @@ const PageBanner = ({ image, title, subtitle }) => {
     >
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 px-5">
         <h2 className="text-white text-3xl lg:text-6xl leading-loose tracking-widest uppercase">
           {title}
         </h2>

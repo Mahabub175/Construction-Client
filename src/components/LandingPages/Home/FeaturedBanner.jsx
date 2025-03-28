@@ -8,7 +8,7 @@ const FeaturedBanner = ({ image, title, subtitle, logo }) => {
     >
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className={`relative z-10 ${logo ? "-mt-24 lg:-mt-32" : ""}`}>
+      <div className={`relative z-10 px-5 ${logo ? "-mt-24 lg:-mt-32" : ""}`}>
         {logo && (
           <Image
             src={logo}

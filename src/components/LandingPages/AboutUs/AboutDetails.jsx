@@ -10,8 +10,8 @@ const AboutDetails = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
 
   return (
-    <section className="max-w-6xl mx-auto px-2 lg:px-5">
-      <div className="flex flex-col lg:flex-row gap-10 items-center">
+    <section className="max-w-6xl mx-auto px-5">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-center">
         <div className="lg:w-4/6">
           <h2 className="text-2xl font-medium tracking-widest text-center">
             A COMPANY SPECIALIZED ON YOU
@@ -30,7 +30,7 @@ const AboutDetails = () => {
             family. Today, Roberto Martinez (3rd and 4th Generations carpenters)
             proudly offers some of the finest handcrafted woodwork.
           </p>
-          <p className="text-gray-600 font-medium mb-5 tracking-widest pl-5 lg:pl-10 border-l-2 border-primary italic">
+          <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
             For several years Robert Carpentry has provided its services to a
             wide variety of Luxury Residences, Hotels & Condominium,
             Restaurants, Stores and many more customers throughout South Florida
@@ -45,10 +45,16 @@ const AboutDetails = () => {
           </p>
         </div>
         <div>
-          <Image src={about1} alt="about1" width={500} height={500} />
+          <Image
+            src={about1}
+            alt="about1"
+            width={500}
+            height={500}
+            className="rounded"
+          />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row-reverse gap-10 items-center mt-10">
+      <div className="flex flex-col lg:flex-row-reverse gap-5 lg:gap-10 items-center mt-10">
         <div className="lg:w-4/6">
           <p className="text-gray-600 font-medium mb-5 tracking-widest">
             Some of our operations include: design services, consultation,
@@ -60,7 +66,7 @@ const AboutDetails = () => {
             Carpentry, We live by the rules that customer satisfaction is our
             primary and foremost goal.
           </p>
-          <p className="text-gray-600 font-medium mb-5 tracking-widest pl-5 lg:pl-10 border-l-2 border-primary italic">
+          <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
             Our attention to detail is shown in our day to day operations, from
             our finishes to our interaction with customers, at Robert Carpentry
             every customer is personally attended by one of the owners.
@@ -73,7 +79,13 @@ const AboutDetails = () => {
           </p>
         </div>
         <div>
-          <Image src={about2} alt="about2" width={500} height={500} />
+          <Image
+            src={about2}
+            alt="about2"
+            width={500}
+            height={500}
+            className="rounded"
+          />
         </div>
       </div>
     </section>

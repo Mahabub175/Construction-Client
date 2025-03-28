@@ -16,12 +16,12 @@ const Services = () => {
       {isLoading ? (
         <LoadingAnimation />
       ) : activeServices?.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-10 justify-center items-start mt-10">
+        <div className="flex flex-wrap gap-10 justify-center items-start mt-14">
           {activeServices?.map((item) => (
             <Link
               href={`/work`}
               key={item?._id}
-              className="relative flex flex-col lg:w-[315px] mx-auto group"
+              className="relative flex flex-col w-[150px] lg:w-[315px] mx-auto group"
             >
               <div className="overflow-hidden rounded">
                 <Image
@@ -34,7 +34,7 @@ const Services = () => {
               </div>
 
               <div className="mt-4 flex flex-col flex-grow">
-                <h4 className="text-xl font-medium text-center">
+                <h4 className="lg:text-xl text-primary font-medium text-center">
                   {item?.name}
                 </h4>
               </div>

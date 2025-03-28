@@ -63,7 +63,7 @@ const WhyUs = () => {
         <FeaturedBanner
           image={featuredBanners[1].attachment}
           title="Luxury Residences  | Commercial  | Hospitality"
-          subtitle="Miami | Miami Beach | Coral Gables | Doral | Aventura | Sunny Isles"
+          subtitle="Miami | Miami Beach | Coral Gables | Sunny Isles"
           logo={globalData?.results?.logo}
         />
       )}

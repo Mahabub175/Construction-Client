@@ -32,7 +32,9 @@ const AllServices = () => {
               </div>
 
               <div className="mt-4 flex flex-col flex-grow">
-                <h4 className="text-2xl font-bold mb-3">{item?.name}</h4>
+                <h4 className="text-2xl font-bold mb-3 text-primary">
+                  {item?.name}
+                </h4>
                 <p className="text-gray-800 text-base leading-relaxed flex-grow">
                   {item?.description}
                 </p>

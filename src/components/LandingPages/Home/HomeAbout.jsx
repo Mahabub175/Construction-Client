@@ -6,7 +6,7 @@ import Link from "next/link";
 const HomeAbout = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
   return (
-    <section className="max-w-7xl mx-auto px-2 lg:px-5 mb-16 lg:mb-20 flex flex-col lg:flex-row items-center justify-between lg:gap-10 lg:mt-24">
+    <section className="max-w-7xl mx-auto px-5 mb-16 lg:mb-20 flex flex-col lg:flex-row items-center justify-between lg:gap-10 lg:mt-24">
       <div>
         <h4 className="text-3xl lg:text-4xl font-medium mb-4 tracking-widest text-primary">
           {globalData?.results?.name}
