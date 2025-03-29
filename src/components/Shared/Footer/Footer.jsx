@@ -11,7 +11,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import logo from "@/assets/images/logo-black.png";
+import logo from "@/assets/images/logo.png";
 
 const Footer = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();

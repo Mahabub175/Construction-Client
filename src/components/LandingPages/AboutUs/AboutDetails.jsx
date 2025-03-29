@@ -4,7 +4,7 @@ import about1 from "@/assets/images/about1.jpg";
 import about2 from "@/assets/images/about2.jpg";
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 import Image from "next/image";
-import logo from "@/assets/images/logo-black.png";
+import logo from "@/assets/images/logo.png";
 
 const AboutDetails = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();

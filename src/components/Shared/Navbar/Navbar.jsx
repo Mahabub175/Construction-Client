@@ -1,7 +1,7 @@
 "use client";
 
 import { menuItems } from "@/assets/data/menuData/menuData";
-import logo from "@/assets/images/logo-black.png";
+import logo from "@/assets/images/logo.png";
 import { useGetSingleUserQuery } from "@/redux/services/auth/authApi";
 import { useCurrentUser } from "@/redux/services/auth/authSlice";
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
