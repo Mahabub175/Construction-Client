@@ -4,16 +4,19 @@ import LoadingAnimation from "@/components/Shared/LoadingAnimation";
 import PageBanner from "@/components/Shared/PageBanner";
 import { useGetSingleWorkBySlugQuery } from "@/redux/services/work/workApi";
 import Image from "next/image";
-import { useState } from "react";
-import {
-  IoIosArrowDroprightCircle,
-  IoIosArrowDropleftCircle,
-} from "react-icons/io";
+import { useState, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { FaAngleLeft, FaAngleRight, FaTimes } from "react-icons/fa";
+import "swiper/css";
 
 const SingleWorkDetails = ({ params }) => {
+  const swiperRef = useRef();
+
   const { data: item, isLoading } = useGetSingleWorkBySlugQuery(params);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [activeImageName, setActiveImageName] = useState("");
 
   if (isLoading) {
     return <LoadingAnimation />;
@@ -26,18 +29,6 @@ const SingleWorkDetails = ({ params }) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const goToPreviousImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? item?.images?.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === item?.images?.length - 1 ? 0 : prevIndex + 1
-    );
   };
 
   return (
@@ -66,40 +57,72 @@ const SingleWorkDetails = ({ params }) => {
 
       {isModalOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 backdrop-blur-md"
+          className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-20 backdrop-blur-lg pt-20"
           onClick={closeModal}
         >
-          <div className="relative w-[80%] max-w-4xl p-4">
-            <Image
-              src={item?.images[currentImageIndex]}
-              alt={`Image ${currentImageIndex + 1}`}
-              width={1000}
-              height={800}
-              className="lg:w-[500px] h-[400px] lg:h-[500px] object-cover mx-auto rounded-lg"
-            />
-            <div className="mt-4 text-center text-white">
+          <div
+            className="relative w-[80%] max-w-4xl lg:p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Swiper
+              ref={swiperRef}
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={10}
+              slidesPerView={1}
+              initialSlide={currentImageIndex}
+              onSlideChange={(swiper) => {
+                setCurrentImageIndex(swiper.activeIndex);
+                setActiveImageName(item?.name);
+              }}
+              className="mySwiper rounded-lg"
+            >
+              {item?.images?.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <Image
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    width={1000}
+                    height={800}
+                    className="w-[500px] h-[400px] xl:h-[500px] object-cover mx-auto rounded-lg"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <div className="mt-4 text-center text-white flex flex-col">
+              <span>{activeImageName}</span>
               <span className="font-semibold">
                 {currentImageIndex + 1} / {item?.images?.length}
               </span>
             </div>
-            <div
-              className="absolute -left-8 lg:left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full cursor-pointer text-white"
-              onClick={(e) => {
-                e.stopPropagation();
-                goToPreviousImage();
-              }}
-            >
-              <IoIosArrowDropleftCircle className="text-2xl hover:text-gray-300 hover:scale-105 duration-300" />
+
+            <div className="flex items-center justify-center gap-5 mt-10">
+              <button
+                className="lg:w-8 lg:h-8 flex items-center justify-center rounded-full bg-white text-black border border-primary hover:bg-primary hover:text-white duration-300 absolute top-[38%] lg:top-[40%] -left-8 lg:left-24 z-50"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  swiperRef.current.swiper.slidePrev();
+                }}
+              >
+                <FaAngleLeft className="text-xl" />
+              </button>
+              <button
+                className="lg:w-8 lg:h-8 flex items-center justify-center rounded-full bg-white text-black border border-primary hover:bg-primary hover:text-white duration-300 absolute top-[38%] lg:top-[40%] -right-8 lg:right-24 z-50"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  swiperRef.current.swiper.slideNext();
+                }}
+              >
+                <FaAngleRight className="text-xl" />
+              </button>
             </div>
-            <div
-              className="absolute -right-8 lg:right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full cursor-pointer text-white"
-              onClick={(e) => {
-                e.stopPropagation();
-                goToNextImage();
-              }}
+
+            <button
+              className="absolute -top-10 -right-4 lg:right-4 text-white font-bold bg-black rounded-full p-1 hover:bg-red-600 duration-200 z-50"
+              onClick={closeModal}
             >
-              <IoIosArrowDroprightCircle className="text-2xl hover:text-gray-300 hover:scale-105 duration-300" />
-            </div>
+              <FaTimes className="text-sm" />
+            </button>
           </div>
         </div>
       )}
