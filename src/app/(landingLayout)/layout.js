@@ -7,7 +7,7 @@ const LandingLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <div className="lg:-mt-10 xl:mt-0">{children}</div>
       <FloatingContact />
       <BackToTop />
       <Footer />
