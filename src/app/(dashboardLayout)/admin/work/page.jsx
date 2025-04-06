@@ -23,7 +23,7 @@ import {
   Tooltip,
 } from "antd";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -187,6 +187,13 @@ const Work = () => {
     slug: item.slug,
     status: item?.status,
   }));
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="px-5">

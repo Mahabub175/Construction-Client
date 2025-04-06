@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "@/assets/images/logo-black.png";
+import logo from "@/assets/images/logo.png";
 
 const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
         return (
           <Link
             key={item?.key}
-            href={item?.href}
+            href={item?.href ?? "/"}
             target={item?.to ? "_blank" : "_self"}
             rel={item?.to ? "noopener noreferrer" : ""}
             onClick={() => handleItemClick(item?.key)}
@@ -59,7 +59,7 @@ const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
         return (
           <Link
             key={item?.key}
-            href={item?.href}
+            href={item?.href ?? "/"}
             target={item?.to ? "_blank" : "_self"}
             rel={item?.to ? "noopener noreferrer" : ""}
             onClick={() => handleItemClick(item?.key)}

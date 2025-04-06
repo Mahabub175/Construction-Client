@@ -22,7 +22,7 @@ import {
   Tag,
   Tooltip,
 } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -101,6 +101,20 @@ const Slider = () => {
       ),
     },
     {
+      title: "Bottom Banner",
+      dataIndex: "bottomBanner",
+      key: "bottomBanner",
+      align: "center",
+      render: (item) => (
+        <Tag
+          color={item ? "green" : "blue"}
+          className="capitalize font-semibold"
+        >
+          {item ? "Active" : "Inactive"}
+        </Tag>
+      ),
+    },
+    {
       title: "Status",
       dataIndex: "status",
       key: "status",
@@ -170,8 +184,16 @@ const Slider = () => {
   const tableData = sliders?.results?.map((item) => ({
     key: item._id,
     attachment: item?.attachment,
+    bottomBanner: item?.bottomBanner,
     status: item?.status,
   }));
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="px-5">

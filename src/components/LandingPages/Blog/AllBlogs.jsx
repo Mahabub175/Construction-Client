@@ -42,7 +42,7 @@ const AllBlogs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-10 justify-center items-center mt-10">
           {filteredBlogs.map((item) => (
             <div
-              key={item?.id}
+              key={item?._id}
               className="bg-white rounded-xl shadow-lg overflow-hidden relative flex flex-col h-[500px] lg:w-[400px] mx-auto group"
             >
               <div className="overflow-hidden">

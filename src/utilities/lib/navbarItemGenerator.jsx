@@ -10,7 +10,7 @@ const navbarItemsGenerator = (items, pathName) => {
       icon: React.createElement(item.icon, { className: "" }),
       label: (
         <Link
-          href={item.path}
+          href={item?.path ?? "/"}
           className={`hover:text-primary text-base font-bold ${
             pathName === item?.path ? "text-primary" : ""
           }`}
@@ -40,7 +40,7 @@ const navbarItemsGenerator = (items, pathName) => {
             trigger="hover"
           >
             <Link
-              href={item?.path}
+              href={item?.path ?? "/"}
               className={`hover:text-primary font-bold text-base  ${
                 pathName === item?.path ? "text-primary" : ""
               }`}

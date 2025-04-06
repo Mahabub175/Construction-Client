@@ -8,7 +8,7 @@ const FloatingContact = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
 
   return (
-    <div className="fixed bottom-[10%] right-7 z-40">
+    <div className="fixed bottom-[10%] md:bottom-[14%] lg:bottom-[14%] xl:bottom-[12%] xxl:bottom-[9.5%] right-2 lg:right-7 z-40">
       <Link
         href={`https://wa.me/${globalData?.results?.businessWhatsapp}`}
         target="_blank"

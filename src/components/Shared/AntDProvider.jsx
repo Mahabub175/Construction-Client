@@ -12,7 +12,7 @@ import { jwtDecode } from "jwt-decode";
 import { Toaster } from "sonner";
 import { usePathname } from "next/navigation";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
-import logo from "@/assets/images/logo-black.png";
+import logo from "@/assets/images/logo.png";
 import LoadingAnimation from "./LoadingAnimation";
 
 const AntDProvider = ({ children }) => {

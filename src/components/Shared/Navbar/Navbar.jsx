@@ -1,7 +1,7 @@
 "use client";
 
 import { menuItems } from "@/assets/data/menuData/menuData";
-import logo from "@/assets/images/logo-black.png";
+import logo from "@/assets/images/logo.png";
 import { useGetSingleUserQuery } from "@/redux/services/auth/authApi";
 import { useCurrentUser } from "@/redux/services/auth/authSlice";
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
@@ -76,7 +76,7 @@ const Navbar = () => {
               globalData={globalData}
             />
           </div>
-          <div className="hidden lg:block">
+          <div className="hidden lg:block mt-0 lg:-mt-[3.2rem] xl:mt-0">
             {user ? (
               <div className="flex items-center gap-2">
                 <Popover
@@ -124,6 +124,7 @@ const Navbar = () => {
           <Menu
             onClick={onClick}
             selectedKeys={[current]}
+            defaultSelectedKeys={[current]}
             mode="inline"
             items={menuItems}
             style={{

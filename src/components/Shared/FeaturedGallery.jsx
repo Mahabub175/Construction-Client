@@ -56,7 +56,7 @@ const FeaturedGallery = () => {
   }
 
   return (
-    <section className="mb-20 mt-2">
+    <section className="mb-20 mt-10 lg:mt-20">
       <div className="border-y pt-5 my-container">
         <h3 className="text-primary font-medium text-center text-2xl mb-5">
           Featured Images
@@ -64,13 +64,13 @@ const FeaturedGallery = () => {
         <div className="flex flex-wrap justify-center items-center gap-5">
           {activeGalleries?.map((galleryItem, index) => (
             <div
-              key={galleryItem._id}
+              key={galleryItem?._id}
               className="mb-5 relative group h-[200px] w-[165px] md:w-[200px] overflow-hidden rounded-md cursor-pointer"
               onClick={() => openModal(index)}
             >
               <Image
-                src={galleryItem.attachment}
-                alt={galleryItem.name}
+                src={galleryItem?.attachment}
+                alt={galleryItem?.name ?? "Gallery Image"}
                 width={800}
                 height={600}
                 className="w-fit lg:w-[200px] h-[200px] mb-5 rounded cursor-pointer mx-auto object-cover"
@@ -94,7 +94,7 @@ const FeaturedGallery = () => {
           <div className="relative w-[80%] max-w-4xl p-4">
             <Image
               src={activeGalleries[currentImageIndex].attachment}
-              alt={activeGalleries[currentImageIndex].name}
+              alt={activeGalleries[currentImageIndex].name ?? "Gallery Image"}
               width={1000}
               height={800}
               className="lg:w-[500px] h-[400px] lg:h-[500px] object-cover mx-auto rounded-lg"

@@ -3,17 +3,17 @@
 import PageBanner from "@/components/Shared/PageBanner";
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 
-const ServiceBanner = () => {
+const AboutBanner = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
   return (
     <>
       <PageBanner
-        image={globalData?.results?.serviceBanner}
-        title="SERVICES"
-        subtitle={"Luxury Residences  | Commercial  | Hospitality"}
+        image={globalData?.results?.aboutBanner}
+        title="About"
+        subtitle={"Find out more about Genesis Carpentry"}
       />
     </>
   );
 };
 
-export default ServiceBanner;
+export default AboutBanner;

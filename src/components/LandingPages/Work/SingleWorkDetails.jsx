@@ -43,7 +43,7 @@ const SingleWorkDetails = ({ params }) => {
   return (
     <section className="mb-20 mt-2">
       <PageBanner image={item?.mainImage} title={item?.name} />
-      <div className="max-w-7xl mx-auto px-2 lg:px-5 ">
+      <div className="max-w-7xl mx-auto px-5 ">
         <div className="columns-2 md:columns-3">
           {item?.images?.map((imageUrl, index) => (
             <div

@@ -11,17 +11,17 @@ const AllServices = () => {
 
   const activeServices = serviceData?.results?.filter((item) => item?.status);
   return (
-    <section className="-mt-10 lg:mt-0 mb-20 my-container">
+    <section className="my-container">
       {isLoading ? (
         <LoadingAnimation />
       ) : activeServices?.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap gap-10 justify-center items-start   mt-10">
           {activeServices?.map((item) => (
             <div
-              key={item?.id}
-              className="overflow-hidden relative flex flex-col lg:w-[315px] mx-auto group"
+              key={item?._id}
+              className="relative flex flex-col lg:w-[315px] mx-auto group"
             >
-              <div className="overflow-hidden">
+              <div className="overflow-hidden rounded">
                 <Image
                   src={item?.attachment}
                   alt={item?.title ?? "Service Image"}
@@ -32,7 +32,9 @@ const AllServices = () => {
               </div>
 
               <div className="mt-4 flex flex-col flex-grow">
-                <h4 className="text-2xl font-bold mb-3">{item?.name}</h4>
+                <h4 className="text-2xl font-bold mb-3 text-primary">
+                  {item?.name}
+                </h4>
                 <p className="text-gray-800 text-base leading-relaxed flex-grow">
                   {item?.description}
                 </p>

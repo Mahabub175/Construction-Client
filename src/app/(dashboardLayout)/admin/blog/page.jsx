@@ -23,7 +23,7 @@ import {
   Tooltip,
 } from "antd";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -190,13 +190,20 @@ const Blog = () => {
   ];
 
   const tableData = blogs?.results?.map((item) => ({
-    key: item._id,
+    key: item?._id,
     name: item?.name,
     slug: item?.slug,
     publishedAt: item?.publishedAt,
     attachment: item?.attachment,
     status: item?.status,
   }));
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="px-5">
