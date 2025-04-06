@@ -196,7 +196,7 @@ const Slider = () => {
   });
 
   return (
-    <div className="px-5">
+    <>
       <TableHeader
         setOpen={setOpen}
         title={"Slider"}
@@ -245,7 +245,7 @@ const Slider = () => {
         text={"slider"}
         func={deleteSlider}
       />
-    </div>
+    </>
   );
 };
 

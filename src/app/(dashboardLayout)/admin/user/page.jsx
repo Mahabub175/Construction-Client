@@ -233,7 +233,7 @@ const AdminDonation = () => {
   });
 
   return (
-    <div className="px-5">
+    <>
       <div className="flex justify-between">
         <div></div>
         <Input
@@ -284,7 +284,7 @@ const AdminDonation = () => {
         handleStatus={handleRoleUpdate}
         text={"Are you sure you want to change the user role?"}
       />
-    </div>
+    </>
   );
 };
 

@@ -20,14 +20,7 @@ const DashboardLayout = ({ children }) => {
             </Header>
             <Layout className="relative">
               <Sidebar />
-              <Content
-                style={{
-                  padding: 24,
-                  minHeight: 280,
-                }}
-              >
-                {children}
-              </Content>
+              <Content className="p-4 lg:p-8">{children}</Content>
             </Layout>
           </Layout>
         </PrivateRoute>

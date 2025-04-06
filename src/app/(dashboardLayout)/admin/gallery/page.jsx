@@ -198,7 +198,7 @@ const Gallery = () => {
   });
 
   return (
-    <div className="px-5">
+    <>
       <TableHeader
         setOpen={setOpen}
         title={"Gallery"}
@@ -247,7 +247,7 @@ const Gallery = () => {
         text={"gallery"}
         func={deleteGallery}
       />
-    </div>
+    </>
   );
 };
 

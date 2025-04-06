@@ -206,7 +206,7 @@ const Blog = () => {
   });
 
   return (
-    <div className="px-5">
+    <>
       <TableHeader
         setOpen={setOpen}
         title={"Blog"}
@@ -255,7 +255,7 @@ const Blog = () => {
         text={"blog"}
         func={deleteBlog}
       />
-    </div>
+    </>
   );
 };
 

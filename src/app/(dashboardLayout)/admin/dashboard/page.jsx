@@ -27,6 +27,15 @@ const Dashboard = () => {
 
   return (
     <section>
+      <div className="mb-10 text-center">
+        <h1 className="text-primary text-4xl font-bold">
+          Welcome To Your Dashboard
+        </h1>
+        <p className="mt-2">
+          Get a quick overview of your website and manage everything easily from
+          here!
+        </p>
+      </div>
       {isLoading ? (
         <LoadingAnimation />
       ) : (

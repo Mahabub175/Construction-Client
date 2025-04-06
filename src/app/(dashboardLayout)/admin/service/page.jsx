@@ -183,7 +183,7 @@ const Service = () => {
   });
 
   return (
-    <div className="px-5">
+    <>
       <TableHeader
         setOpen={setOpen}
         title={"Service"}
@@ -232,7 +232,7 @@ const Service = () => {
         text={"service"}
         func={deleteService}
       />
-    </div>
+    </>
   );
 };
 

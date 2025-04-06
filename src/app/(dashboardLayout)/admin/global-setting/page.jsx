@@ -115,7 +115,7 @@ const AdminAccountSetting = () => {
   }, [data]);
 
   return (
-    <section className="w-4/6 mx-auto">
+    <section className="lg:w-4/6 mx-auto">
       <Divider orientation="left" orientationMargin={0}>
         Global Settings
       </Divider>
@@ -262,7 +262,7 @@ const AdminAccountSetting = () => {
           </Form.Item>
         </div>
 
-        <div className="flex justify-center my-10">
+        <div className="flex justify-center lg:my-10 mb-5 lg:mb-0">
           <SubmitButton text={"Save"} loading={isLoading} fullWidth={true} />
         </div>
       </CustomForm>

@@ -117,8 +117,8 @@ const DetailsModal = ({ modalOpen, setModalOpen, title, details }) => {
       width={1000}
     >
       {details ? (
-        <div className="p-5">
-          <h2 className="text-center text-xl font-bold pb-2 w-1/3 mx-auto border-b-2 border-gray-500 mb-10">
+        <div className="lg:p-5">
+          <h2 className="text-center text-xl font-bold pb-2 lg:w-1/3 mx-auto border-b-2 border-gray-500 mb-10">
             {title} Details
           </h2>
 
