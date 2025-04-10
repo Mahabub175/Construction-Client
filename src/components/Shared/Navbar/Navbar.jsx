@@ -68,7 +68,7 @@ const Navbar = () => {
           <FaBars onClick={showDrawer} className="text-lg cursor-pointer" />
         </div>
         <div className="lg:flex items-center gap-10 hidden">
-          <div className="hidden lg:flex lg:flex-wrap gap-8 items-center">
+          <div className="hidden lg:flex lg:flex-wrap gap-4 xl:gap-8 items-center">
             <MenuItems
               items={menuItems}
               setCurrent={setCurrent}
@@ -76,7 +76,7 @@ const Navbar = () => {
               globalData={globalData}
             />
           </div>
-          <div className="hidden lg:block mt-0 lg:-mt-[3.2rem] xl:mt-0">
+          <div className="hidden lg:block">
             {user ? (
               <div className="flex items-center gap-2">
                 <Popover
