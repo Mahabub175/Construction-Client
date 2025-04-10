@@ -4,12 +4,12 @@ import AntDProvider from "@/components/Shared/AntDProvider";
 import { Raleway } from "next/font/google";
 
 const ralewayFont = Raleway({
-  weight: ["100", "300" ,"400", "500", "700"],
+  weight: ["100", "300", "400", "500", "700"],
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "Genesis Carpentry",
+  title: "Genesis Carpenter",
   description: "Complete Portfolio Website",
 };
 

@@ -24,14 +24,14 @@ const AboutDetails = () => {
             className="mx-auto -my-5 lg:my-0"
           />
           <p className="text-gray-600 font-medium mb-5 tracking-widest">
-            Genesis Carpentry Inc is a family owned and operated custom woodwork
+            Genesis Carpenter Inc is a family owned and operated custom woodwork
             corporation located in Miami, Florida. For many generations superior
             craftsmanship has been a tradition in the Martinez Family, our
             family. Today, Roberto Martinez (3rd and 4th Generations carpenters)
             proudly offers some of the finest handcrafted woodwork.
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
-            For several years Genesis Carpentry has provided its services to a
+            For several years Genesis Carpenter has provided its services to a
             wide variety of Luxury Residences, Hotels & Condominium,
             Restaurants, Stores and many more customers throughout South Florida
             and the Caribbean.
@@ -68,7 +68,7 @@ const AboutDetails = () => {
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
             Our attention to detail is shown in our day to day operations, from
-            our finishes to our interaction with customers, at Genesis Carpentry
+            our finishes to our interaction with customers, at Genesis Carpenter
             every customer is personally attended by one of the owners.
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest">

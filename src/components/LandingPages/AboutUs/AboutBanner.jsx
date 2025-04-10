@@ -10,7 +10,7 @@ const AboutBanner = () => {
       <PageBanner
         image={globalData?.results?.aboutBanner}
         title="About"
-        subtitle={"Find out more about Genesis Carpentry"}
+        subtitle={"Find out more about Genesis Carpenter"}
       />
     </>
   );

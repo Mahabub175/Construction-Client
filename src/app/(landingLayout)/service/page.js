@@ -3,8 +3,8 @@ import ServiceBanner from "@/components/LandingPages/Service/ServiceBanner";
 import FeaturedGallery from "@/components/Shared/FeaturedGallery";
 
 export const metadata = {
-  title: "Service - Genesis Carpentry",
-  description: "This is the service page of Genesis Carpentry website.",
+  title: "Service - Genesis Carpenter",
+  description: "This is the service page of Genesis Carpenter website.",
 };
 
 const page = () => {

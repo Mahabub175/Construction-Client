@@ -76,7 +76,7 @@ const Footer = () => {
 
             <div className="sm:text-center">
               <h2 className="text-white text-sm font-normal">
-                © Copyright {dayjs().year()} Genesis Carpentry
+                © Copyright {dayjs().year()} Genesis Carpenter
               </h2>
             </div>
           </div>

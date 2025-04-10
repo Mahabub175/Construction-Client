@@ -48,7 +48,7 @@ const WrappedAntDConfig = ({ children }) => {
     setLoading(true);
 
     if (data?.results) {
-      const websiteName = data?.results?.name || "Genesis Carpentry";
+      const websiteName = data?.results?.name || "Genesis Carpenter";
 
       document.title = websiteName;
 
@@ -82,7 +82,7 @@ const WrappedAntDConfig = ({ children }) => {
     if (!data?.results?.favicon) return;
 
     const favicon = data.results.favicon || logo;
-    document.title = data.results.name || "Genesis Carpentry";
+    document.title = data.results.name || "Genesis Carpenter";
 
     let link = document.querySelector("link[rel~='icon']");
     if (!link) {

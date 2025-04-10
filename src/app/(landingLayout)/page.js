@@ -7,8 +7,8 @@ import WhyUs from "@/components/LandingPages/Home/WhyUs";
 import FeaturedGallery from "@/components/Shared/FeaturedGallery";
 
 export const metadata = {
-  title: "Genesis Carpentry",
-  description: "This is the homepage of Genesis Carpentry website.",
+  title: "Genesis Carpenter",
+  description: "This is the homepage of Genesis Carpenter website.",
 };
 
 const page = async () => {

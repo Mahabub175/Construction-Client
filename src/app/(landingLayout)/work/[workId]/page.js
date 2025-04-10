@@ -1,8 +1,8 @@
 import SingleWorkDetails from "@/components/LandingPages/Work/SingleWorkDetails";
 
 export const metadata = {
-  title: "Work Details - Genesis Carpentry",
-  description: "This is the work details page of Genesis Carpentry website.",
+  title: "Work Details - Genesis Carpenter",
+  description: "This is the work details page of Genesis Carpenter website.",
 };
 
 const page = ({ params }) => {
