@@ -7,4 +7,5 @@ export const menuItems = [
   { key: "shop", label: "Shop", href: "/shop" },
   { key: "contact", label: "Contact", href: "/contact" },
   { key: "blog", label: "Blog", href: "/blog" },
+  { key: "sign-in", label: "Sign In", href: "/sign-in" },
 ];

@@ -50,6 +50,10 @@ const Navbar = () => {
     }
   };
 
+  const filteredItems = data
+    ? menuItems.filter((item) => item?.key !== "sign-in")
+    : menuItems;
+
   return (
     <nav className={`-my-3 lg:-my-5 my-container`}>
       <div className="flex justify-between lg:justify-center items-center gap-4">
@@ -70,7 +74,7 @@ const Navbar = () => {
         <div className="lg:flex items-center gap-10 hidden">
           <div className="hidden lg:flex lg:flex-wrap gap-4 xl:gap-8 items-center">
             <MenuItems
-              items={menuItems}
+              items={filteredItems}
               setCurrent={setCurrent}
               closeDrawer={closeDrawer}
               globalData={globalData}
@@ -126,7 +130,7 @@ const Navbar = () => {
             selectedKeys={[current]}
             defaultSelectedKeys={[current]}
             mode="inline"
-            items={menuItems}
+            items={filteredItems}
             style={{
               borderRight: "none",
               fontWeight: "bold",
@@ -134,7 +138,7 @@ const Navbar = () => {
           />
         </div>
         <div className="flex lg:hidden items-center gap-6 ml-5 mt-2">
-          {user ? (
+          {data?._id ? (
             <div className="flex items-center gap-2">
               <Popover
                 placement="topRight"

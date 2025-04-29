@@ -13,7 +13,7 @@ const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
 
   return (
     <>
-      {items?.slice(0, Math.ceil(items.length / 2)).map((item) => {
+      {items?.slice(0, Math.ceil(items.length / 2))?.map((item) => {
         const isActive = pathname === item?.href;
         return (
           <Link
