@@ -2,7 +2,6 @@
 
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
 import FeaturedBanner from "./FeaturedBanner";
-import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 import whyUs from "@/assets/images/whyUs.png";
 import Image from "next/image";
 import { whyUsData } from "@/assets/data/homeData";
@@ -10,7 +9,6 @@ import Link from "next/link";
 
 const WhyUs = () => {
   const { data: sliders } = useGetAllSlidersQuery();
-  const { data: globalData } = useGetAllGlobalSettingQuery();
 
   const featuredBanners = sliders?.results?.filter(
     (item) => item?.status && item?.bottomBanner && item?.attachment
@@ -22,6 +20,9 @@ const WhyUs = () => {
         <FeaturedBanner
           image={featuredBanners[0].attachment}
           title="Superior Craftsmanship"
+          subtitle={
+            "We are committed to providing the best craftsmanship at a highly affordable value for all homeowners."
+          }
         />
       )}
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center mb-10 lg:mb-20 my-container">
@@ -39,6 +40,12 @@ const WhyUs = () => {
           <p className="text-gray-600 leading-relaxed mb-6">
             {whyUsData?.description}
           </p>
+          <h5 className="text-2xl font-medium mb-1 tracking-widest">
+            Renovation & Carpentry Services
+          </h5>
+          <h6 className="text-xl font-medium mb-4 tracking-widest">
+            For Residential And Commercial
+          </h6>
           <ul className="list-inside px-5 mb-10">
             {whyUsData?.lists?.map((item, index) => (
               <li
@@ -54,7 +61,7 @@ const WhyUs = () => {
               href={`/service`}
               className="px-10 py-2 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300"
             >
-              Services
+              View Services
             </Link>
           </div>
         </div>
@@ -62,9 +69,8 @@ const WhyUs = () => {
       {featuredBanners?.[1] && (
         <FeaturedBanner
           image={featuredBanners[1].attachment}
-          title="Luxury Residences  | Commercial  | Hospitality"
-          subtitle="Miami | Miami Beach | Coral Gables | Sunny Isles"
-          logo={globalData?.results?.logo}
+          title="Direct Carpentry Service"
+          subtitle={"Specializing in quality woodwork for home renovations"}
         />
       )}
     </section>

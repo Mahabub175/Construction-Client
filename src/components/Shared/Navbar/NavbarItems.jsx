@@ -25,7 +25,7 @@ const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
           >
             <span
               className={`relative text-base font-medium mx-2 group hover:text-primary duration-300 pb-1 ${
-                isActive ? "text-primary" : ""
+                isActive ? "text-primary" : "text-white"
               }`}
             >
               {item?.label}
@@ -66,7 +66,7 @@ const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
           >
             <span
               className={`relative text-base font-medium mx-2 group hover:text-primary duration-300 pb-1 ${
-                isActive ? "text-primary" : ""
+                isActive ? "text-primary" : "text-white"
               }`}
             >
               {item?.label}

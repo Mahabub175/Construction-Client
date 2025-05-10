@@ -33,13 +33,15 @@ const NewsletterBanner = () => {
   return (
     <section className="mt-10 my-container flex flex-col justify-between items-center gap-5">
       <div className="text-center">
-        <h3 className="text-3xl font-bold mb-2">Newsletter</h3>
+        <h3 className="text-3xl font-medium mb-2 tracking-widest">
+          Newsletter
+        </h3>
         <p>Subscribe to get updates about our services.</p>
       </div>
-      <div className="px-10 space-y-3 mb-10">
+      <div className="lg:px-10 space-y-3 mb-10">
         <Form
           onFinish={onSubmit}
-          className="flex items-center lg:w-[450px] relative gap-2"
+          className="flex items-center w-full lg:w-[450px] relative gap-2"
         >
           <Input
             onChange={(e) => setEmail(e.target.value)}

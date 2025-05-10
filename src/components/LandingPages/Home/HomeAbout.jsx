@@ -7,7 +7,7 @@ const HomeAbout = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
   return (
     <section className="max-w-7xl mx-auto px-5 mb-16 lg:mb-20 flex flex-col lg:flex-row items-center justify-between lg:gap-10 lg:mt-24">
-      <div>
+      <div className="w-full">
         <h4 className="text-3xl lg:text-4xl font-medium mb-4 tracking-widest text-primary">
           {globalData?.results?.name}
         </h4>
@@ -15,11 +15,27 @@ const HomeAbout = () => {
           {globalData?.results?.businessSlogan}
         </p>
         <p className="text-gray-600 leading-relaxed mb-6 lg:w-5/6">
-          {globalData?.results?.description}
+          Some creative designs, a blend of clear thinking and reality, using
+          the power of vivid imagination. May the interior Phone decoration of
+          your residence, office, showroom, restaurant and the use of every inch
+          of space be filled with aesthetics within your means.
+        </p>
+        <p className="text-gray-600 leading-relaxed mb-6 lg:w-5/6">
+          We are at your side with the latest interior materials. Beautiful
+          architectural style, quality standards, durability, honesty and
+          dedication are the principles of our service. A combination of
+          experienced and skilled craftsmen from all sectors
+        </p>
+        <p className="text-gray-600 leading-relaxed mb-6 lg:w-5/6">
+          Genesis Carpenter is able to provide our expertise to assist you with
+          your Carpentry and Renovation work. We promise to provide you with
+          direct factory prices, excellent Carpentry work and installation with
+          good craftsmanship, reliable service, honest prices and we respect
+          your needs.
         </p>
       </div>
 
-      <div className="flex flex-col gap-5 w-full">
+      <div className="flex flex-col gap-5">
         <div>
           <p className="mb-2 font-bold">Phone</p>
           <Link

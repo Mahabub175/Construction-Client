@@ -23,7 +23,9 @@ const FeaturedBanner = ({ image, title, subtitle, logo }) => {
           {title}
         </h2>
         {subtitle && (
-          <p className="mt-2 lg:mt-4 text-sm lg:text-base">{subtitle}</p>
+          <p className="mt-2 lg:mt-4 text-sm lg:text-base lg:leading-loose lg:tracking-widest">
+            {subtitle}
+          </p>
         )}
       </div>
     </section>
