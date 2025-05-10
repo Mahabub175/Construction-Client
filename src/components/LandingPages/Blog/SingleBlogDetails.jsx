@@ -12,10 +12,10 @@ const SingleBlogDetails = ({ params }) => {
   }
 
   return (
-    <section className="my-container mb-20 mt-6 lg:mt-10">
+    <section className="my-container mb-20 mt-20 lg:mt-32">
       <div className="space-y-4 mb-10">
-        <p className="text-2xl lg:text-4xl font-bold">{item?.name}</p>
-        <p className="text-black/80 font-medium">
+        <p className="text-xl lg:text-4xl font-bold">{item?.name}</p>
+        <p className="text-black/80 font-medium text-sm lg:text-base">
           Published At: {item?.publishedAt}
         </p>
       </div>

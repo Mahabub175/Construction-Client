@@ -11,10 +11,10 @@ const AboutDetails = () => {
 
   return (
     <section className="max-w-6xl mx-auto px-5">
-      <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-center">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-end">
         <div className="lg:w-4/6">
           <h2 className="text-2xl font-medium tracking-widest text-center">
-            A COMPANY SPECIALIZED ON YOU
+            A COMPANY FOR RENOVATION & CARPENTRY SPECIALIZED ON YOU
           </h2>
           <Image
             src={globalData?.results?.logo ?? logo}
@@ -24,24 +24,36 @@ const AboutDetails = () => {
             className="mx-auto -my-5 lg:my-0"
           />
           <p className="text-gray-600 font-medium mb-5 tracking-widest">
-            Genesis Carpenter Inc is a family owned and operated custom woodwork
-            corporation located in Miami, Florida. For many generations superior
-            craftsmanship has been a tradition in the Martinez Family, our
-            family. Today, Roberto Martinez (3rd and 4th Generations carpenters)
-            proudly offers some of the finest handcrafted woodwork.
-          </p>
-          <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
-            For several years Genesis Carpenter has provided its services to a
-            wide variety of Luxury Residences, Hotels & Condominium,
-            Restaurants, Stores and many more customers throughout South Florida
-            and the Caribbean.
+            Genesis Carpenter is renovation and carpentry based Company in
+            Singapore with an exceptional for providing innovative, quality and
+            extraordinary 2d plan & 3d designs and services across all interior
+            3d model and fit-out solutions as a commercial & residential.
           </p>
           <p className="text-gray-600 font-medium mb-5 tracking-widest">
-            We provide our clients with years of experience with hardwoods,
-            traditional plywood and the most exotic wood veneers, which set the
-            standard for superior craftsmanship and exceptional finish. Our team
-            is capable of matching any existing finish and exceeding our
-            client’s expectations.{" "}
+            We cerate a team of our esteemed how have earned a reputation for
+            transforming worldly spaces into style powerhouses. we have
+            developed a process to provide our clients with a seamless
+            experience when designing their commercial and residential interior
+            design.
+          </p>
+          <p className="text-gray-600 font-medium mb-5 tracking-widest">
+            We can handle every single aspect of any Interior Fit out a project
+            so that you don’t need to run around to find different materials or
+            suppliers of various products you want in your project.
+          </p>
+          <p className="text-gray-600 font-medium mb-5 tracking-widest">
+            We provide ease to get a skilled and reliable team for installation
+            of everything. Together with our own skilled in-house team, it
+            becomes very convenient for us to execute a project of any quantum &
+            create a truly exceptional and stunning space for our clients.
+          </p>
+          <p className="text-gray-600 font-medium mb-5 tracking-widest">
+            we provide our clients with outstanding services from the stage of
+            Conceptualization to Completion of the project. It is important to
+            understand that there are several steps that need to be undertaken
+            in order to successfully complete a given project. We not only
+            ensure taking care of your model and fit out but everything that
+            needs to be fulfilled along with it.
           </p>
         </div>
         <div>
@@ -54,19 +66,17 @@ const AboutDetails = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row-reverse gap-5 lg:gap-10 items-center mt-10">
-        <div className="lg:w-4/6">
+      <div className="flex flex-col gap-5 lg:gap-10 items-center mt-10 lg:mt-20">
+        <div>
           <p className="text-gray-600 font-medium mb-5 tracking-widest">
-            Some of our operations include: design services, consultation,
+            Some of our operations include: 3d design services, consultation,
             custom fabrication, installation and completion. Our experience and
             capabilities provide us with ability to work with home and business
-            owners, architects and designers. We work with contractors during
-            the process, developing drawings, creating and providing samples for
-            our customer. Outstanding customer service is our goal at Genesis
-            Carpentry, We live by the rules that customer satisfaction is our
-            primary and foremost goal.
+            owners, architects and designers. Outstanding customer service is
+            our goal at Genesis Carpentry, We live by the rules that customer
+            satisfaction is our primary and foremost goal.
           </p>
-          <p className="text-gray-600 font-medium mb-5 tracking-widest pl-4 lg:pl-10 border-l-2 border-primary italic">
+          <p className="text-gray-600 font-medium mb-5 tracking-widest">
             Our attention to detail is shown in our day to day operations, from
             our finishes to our interaction with customers, at Genesis Carpenter
             every customer is personally attended by one of the owners.
@@ -87,6 +97,25 @@ const AboutDetails = () => {
             className="rounded"
           />
         </div>
+      </div>
+
+      <div className="mt-10 lg:mt-20">
+        <h2 className="text-3xl font-medium tracking-widest text-center mb-6">
+          Ready For A Remodel?
+        </h2>
+        <p className="text-gray-600 font-medium mb-1 tracking-widest">
+          Lifetime Remodeling Systems is proud to offer a full line of
+          remodeling services for our clients including kitchen, bath and full
+          scale interior remodel. Whether you’re dreaming of a new master
+          bathroom, a kitchen refresh,living room, office, restaurant or wish to
+          change the interior layout of your home our expert team is able
+          execute your remodeling vision. Contact Us to set up a free in-home
+          consultation with our remodeling consultant and set your dream
+          remodeling plans in motion!
+        </p>
+        <p className="text-gray-600 font-medium mb-1 tracking-widest">
+          Reputable, stable remodeling services.
+        </p>
       </div>
     </section>
   );
