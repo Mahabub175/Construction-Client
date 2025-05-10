@@ -22,8 +22,8 @@ const page = async () => {
       <Works />
       <Shops />
       <FeaturedGallery />
-      <HomeContact />
       <Brands />
+      <HomeContact />
       <NewsletterBanner />
     </>
   );
