@@ -5,13 +5,13 @@ import Link from "next/link";
 const Works = () => {
   return (
     <section className="mb-10 lg:mb-20 my-container">
-      <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center gap-20">
+      <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center lg:gap-20">
         <Image
           src={whyUs}
           alt="why us"
           width={500}
           height={600}
-          className="mx-auto mt-10 lg:mt-0"
+          className="mx-auto mb-10 lg:mb-0"
         />
         <div className="">
           <div>

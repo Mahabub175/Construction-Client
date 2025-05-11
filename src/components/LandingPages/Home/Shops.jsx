@@ -23,17 +23,17 @@ const Shops = () => {
         />
       )}
       <div className="mb-10 lg:mb-20 my-container">
-        <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center gap-20">
+        <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center lg:gap-20">
           <Image
             src={whyUs}
             alt="why us"
             width={500}
             height={600}
-            className="mx-auto mt-10 lg:mt-0"
+            className="mx-auto mb-10 lg:mb-0"
           />
           <div className="tracking-wide leading-relaxed">
             <div>
-              <h3 className="font-medium text-2xl mb-2 tracking-widest">
+              <h3 className="font-medium text-xl lg:text-2xl mb-2 tracking-widest">
                 FREE CONSULTATION & DESIGN PROPOSAL
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">

@@ -52,11 +52,11 @@ const FeaturedGallery = () => {
         <h3 className="text-primary font-medium text-center text-2xl mb-5">
           Featured Images
         </h3>
-        <div className="flex flex-wrap justify-center items-center gap-5">
+        <div className="flex flex-wrap justify-center items-center gap-3 lg:gap-5">
           {activeGalleries?.map((galleryItem, index) => (
             <div
               key={galleryItem?._id}
-              className="mb-5 relative group h-[200px] w-[165px] md:w-[200px] overflow-hidden rounded-md cursor-pointer"
+              className="mb-5 relative group h-[200px] w-[160px] md:w-[200px] overflow-hidden rounded-md cursor-pointer"
               onClick={() => openModal(index)}
             >
               <Image

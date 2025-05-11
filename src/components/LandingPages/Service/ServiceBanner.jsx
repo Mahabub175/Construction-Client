@@ -9,8 +9,9 @@ const ServiceBanner = () => {
     <>
       <PageBanner
         image={globalData?.results?.serviceBanner}
+        heading={"Providing Carpentry, Renovation, 2d Plan & 3D Design"}
         title="SERVICES"
-        subtitle={"Luxury Residences  | Commercial  | Hospitality"}
+        subtitle={"Residences  | Commercial  | Hospitality"}
       />
     </>
   );

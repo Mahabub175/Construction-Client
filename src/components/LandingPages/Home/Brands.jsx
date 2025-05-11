@@ -28,7 +28,7 @@ const activeBrands = [
 ];
 const Brands = () => {
   return (
-    <section className="mb-10 lg:mb-20 my-container mt-10 lg:mt-20">
+    <section className="mb-20 my-container -mt-10 lg:mt-20">
       <h2 className="mb-10 text-center leading-relaxed tracking-widest text-2xl lg:text-4xl font-medium">
         Our Clients
       </h2>

@@ -13,7 +13,7 @@ const AboutDetails = () => {
     <section className="max-w-6xl mx-auto px-5">
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 items-end">
         <div className="lg:w-4/6">
-          <h2 className="text-2xl font-medium tracking-widest text-center">
+          <h2 className="text-xl lg:text-2xl font-medium tracking-widest text-center">
             A COMPANY FOR RENOVATION & CARPENTRY SPECIALIZED ON YOU
           </h2>
           <Image
@@ -100,7 +100,7 @@ const AboutDetails = () => {
       </div>
 
       <div className="mt-10 lg:mt-20">
-        <h2 className="text-3xl font-medium tracking-widest text-center mb-6">
+        <h2 className="text-2xl font-medium tracking-widest text-center mb-6">
           Ready For A Remodel?
         </h2>
         <p className="text-gray-600 font-medium mb-1 tracking-widest">
