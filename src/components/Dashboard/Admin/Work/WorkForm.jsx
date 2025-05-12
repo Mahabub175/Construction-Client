@@ -6,11 +6,6 @@ const WorkForm = ({ attachment }) => {
   return (
     <>
       <CustomInput label={"Project Name"} name={"name"} required={true} />
-      <CustomInput
-        label={"Description"}
-        name={"description"}
-        type={"textarea"}
-      />
       <span className="text-primary">
         *Please Upload 2000x450 size images for best result*
       </span>

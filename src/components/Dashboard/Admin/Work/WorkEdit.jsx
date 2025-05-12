@@ -15,9 +15,19 @@ import {
 } from "@/redux/services/work/workApi";
 import CustomModal from "@/components/Reusable/Modal/CustomModal.jsx";
 import { base_url_image } from "@/utilities/configs/base_api.js";
+import { Form } from "antd";
+import dynamic from "next/dynamic.js";
+
+const CustomTextEditor = dynamic(
+  () => import("@/components/Reusable/Form/CustomTextEditor"),
+  {
+    ssr: false,
+  }
+);
 
 const WorkEdit = ({ open, setOpen, itemId }) => {
   const [fields, setFields] = useState([]);
+  const [content, setContent] = useState("");
 
   const { data: workData, isFetching: isWorkFetching } = useGetSingleWorkQuery(
     itemId,
@@ -31,7 +41,7 @@ const WorkEdit = ({ open, setOpen, itemId }) => {
   const onSubmit = async (values) => {
     const toastId = toast.loading("Updating Work...");
     try {
-      const submittedData = { ...values };
+      const submittedData = { ...values, description: content };
 
       const existingImages =
         values?.images
@@ -90,6 +100,7 @@ const WorkEdit = ({ open, setOpen, itemId }) => {
         },
       ])
     );
+    setContent(workData?.description);
   }, [workData]);
 
   return (
@@ -101,6 +112,10 @@ const WorkEdit = ({ open, setOpen, itemId }) => {
     >
       <CustomForm onSubmit={onSubmit} fields={fields}>
         <WorkForm attachment={workData?.mainImage} />
+
+        <Form.Item label={"Project Description"} name={"description"} required>
+          <CustomTextEditor value={content} onChange={setContent} />
+        </Form.Item>
 
         <CustomSelect
           name={"status"}

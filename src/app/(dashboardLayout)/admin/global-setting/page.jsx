@@ -77,6 +77,11 @@ const AdminAccountSetting = () => {
           values?.contactBanner?.[0].originFileObj
         );
       }
+      if (!values?.processBanner?.[0].url) {
+        submittedData.processBanner = await compressImage(
+          values?.processBanner?.[0].originFileObj
+        );
+      }
       if (!values?.shopBanner?.[0].url) {
         submittedData.shopBanner = await compressImage(
           values?.shopBanner?.[0].originFileObj
@@ -127,14 +132,14 @@ const AdminAccountSetting = () => {
           label={"Website Description"}
           required={false}
         />
-        <FileUploader
-          defaultValue={data?.results?.logo}
-          label="Website Logo"
-          name="logo"
-          required={true}
-        />
-
         <div className="two-grid">
+          <FileUploader
+            defaultValue={data?.results?.logo}
+            label="Website Logo"
+            name="logo"
+            required={true}
+          />
+
           <FileUploader
             defaultValue={data?.results?.favicon}
             label="Website Favicon"
@@ -151,6 +156,12 @@ const AdminAccountSetting = () => {
             defaultValue={data?.results?.serviceBanner}
             label="Website Service Banner"
             name="serviceBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.processBanner}
+            label="Website Process Banner"
+            name="processBanner"
             required={true}
           />
           <FileUploader

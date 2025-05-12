@@ -15,15 +15,15 @@ const Shops = () => {
 
   return (
     <section>
-      {featuredBanners?.[0] && (
+      {featuredBanners?.[2] && (
         <FeaturedBanner
-          image={featuredBanners[0].attachment}
+          image={featuredBanners[2].attachment}
           title="Shop"
           subtitle={"Choose your favorite design from our shop"}
         />
       )}
       <div className="mb-10 lg:mb-20 my-container">
-        <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center lg:gap-20">
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:gap-20">
           <Image
             src={whyUs}
             alt="why us"

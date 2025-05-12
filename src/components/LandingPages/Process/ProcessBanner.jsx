@@ -8,7 +8,7 @@ const ProcessBanner = () => {
   return (
     <>
       <PageBanner
-        image={globalData?.results?.galleryBanner}
+        image={globalData?.results?.processBanner}
         title="PROCESS"
         subtitle={"FROM START TO FINISH OUR EASY 5 STEP PROCESS"}
       />

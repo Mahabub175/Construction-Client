@@ -5,7 +5,11 @@ import {
   RiGalleryFill,
   RiShoppingCartFill,
 } from "react-icons/ri";
-import { TbLayoutDashboardFilled, TbSettingsFilled } from "react-icons/tb";
+import {
+  TbLayoutDashboardFilled,
+  TbSettingsFilled,
+  TbBrand4Chan,
+} from "react-icons/tb";
 import { GrBusinessService } from "react-icons/gr";
 import { BsPersonWorkspace } from "react-icons/bs";
 
@@ -34,6 +38,11 @@ export const adminSidebarRoutes = [
     name: "Gallery",
     path: "gallery",
     icon: RiGalleryFill,
+  },
+  {
+    name: "Brand",
+    path: "brand",
+    icon: TbBrand4Chan,
   },
   {
     name: "Shop",

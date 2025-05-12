@@ -65,6 +65,7 @@ export const transformDefaultValues = (defaultValue, selectedData) => {
             "blogBanner",
             "aboutBanner",
             "serviceBanner",
+            "processBanner",
             "workBanner",
             "galleryBanner",
             "shopBanner",

@@ -16,9 +16,9 @@ const WhyUs = () => {
 
   return (
     <section>
-      {featuredBanners?.[0] && (
+      {featuredBanners?.[3] && (
         <FeaturedBanner
-          image={featuredBanners[0].attachment}
+          image={featuredBanners[3].attachment}
           title="Superior Craftsmanship"
           subtitle={
             "We are committed to providing the best craftsmanship at a highly affordable value for all homeowners."
@@ -66,9 +66,9 @@ const WhyUs = () => {
           </div>
         </div>
       </div>
-      {featuredBanners?.[1] && (
+      {featuredBanners?.[4] && (
         <FeaturedBanner
-          image={featuredBanners[1].attachment}
+          image={featuredBanners[4].attachment}
           title="Direct Carpentry Service"
           subtitle={"Specializing in quality woodwork for home renovations"}
         />
