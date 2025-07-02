@@ -5,7 +5,7 @@ const HomeContact = () => {
     <section
       style={{
         backgroundImage:
-          "url('https://genesisapi.moonsgallerysystem.com/uploads/1743005033166-homeContact.jpg')",
+          "url('https://api.genesiscarpenter.com/uploads/1743005033166-homeContact.jpg')",
       }}
       className="py-10 bg-no-repeat bg-cover bg-center lg:h-[650px] relative flex items-center justify-center -mt-5 lg:mt-0"
     >
