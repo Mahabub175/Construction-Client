@@ -4,9 +4,9 @@ export const menuItems = [
   { key: "service", label: "Services", href: "/service" },
   { key: "work", label: "Work", href: "/work" },
   { key: "process", label: "Process", href: "/process" },
-  { key: "gallery", label: "Gallery", href: "/gallery" },
+  // { key: "gallery", label: "Gallery", href: "/gallery" },
   { key: "shop", label: "Shop", href: "/shop" },
   { key: "contact", label: "Contact", href: "/contact" },
   { key: "blog", label: "Blog", href: "/blog" },
-  { key: "sign-in", label: "Sign In", href: "/sign-in" },
+  // { key: "sign-in", label: "Sign In", href: "/sign-in" },
 ];
