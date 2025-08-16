@@ -45,12 +45,12 @@ const ContactDetails = () => {
                 {globalData?.results?.businessAddress}
               </Link>
               <Link
-                href={`tel:${globalData?.results?.businessNumber ?? "/"}`}
+                href={`tel:+${globalData?.results?.businessNumber ?? "/"}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline hover:text-primary duration-300"
               >
-                {globalData?.results?.businessNumber}
+                +{globalData?.results?.businessNumber}
               </Link>
             </div>
             <div className="flex items-center gap-4 mt-4">

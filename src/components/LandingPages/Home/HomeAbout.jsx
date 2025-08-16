@@ -39,12 +39,12 @@ const HomeAbout = () => {
         <div>
           <p className="mb-2 font-bold">Phone</p>
           <Link
-            href={`tel:${globalData?.results?.businessNumber ?? "/"}`}
+            href={`tel:+${globalData?.results?.businessNumber ?? "/"}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline hover:text-primary duration-300 inline-block"
           >
-            {globalData?.results?.businessNumber}
+            +{globalData?.results?.businessNumber}
           </Link>
         </div>
         <div className="mb-5">

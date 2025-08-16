@@ -4,6 +4,7 @@ import HomeAbout from "@/components/LandingPages/Home/HomeAbout";
 import HomeContact from "@/components/LandingPages/Home/HomeContact";
 import NewsletterBanner from "@/components/LandingPages/Home/NewsletterBanner";
 import Shops from "@/components/LandingPages/Home/Shops";
+import SmallFeature from "@/components/LandingPages/Home/SmallFeature";
 import WhyUs from "@/components/LandingPages/Home/WhyUs";
 import Works from "@/components/LandingPages/Home/Works";
 import FeaturedGallery from "@/components/Shared/FeaturedGallery";
@@ -21,6 +22,7 @@ const page = async () => {
       <WhyUs />
       <Works />
       <Shops />
+      <SmallFeature />
       <FeaturedGallery />
       <Brands />
       <HomeContact />

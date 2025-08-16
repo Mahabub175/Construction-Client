@@ -21,6 +21,8 @@ const WorkForm = ({ attachment }) => {
         label={"Project Images"}
         required={true}
       />
+
+      <CustomInput label={"Project Youtube Video Link"} name={"youtubeVideo"} />
     </>
   );
 };

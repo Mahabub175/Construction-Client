@@ -59,6 +59,20 @@ const SingleWorkDetails = ({ params }) => {
             </div>
           ))}
         </div>
+
+        {item?.youtubeVideo && (
+          <div className="mb-5 mt-10">
+            <div className="relative w-full pt-[56.25%] rounded overflow-hidden">
+              <iframe
+                src={`${item.youtubeVideo}`}
+                title="YouTube video"
+                className="absolute top-0 left-0 w-full h-[600px] rounded"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        )}
       </div>
 
       {isModalOpen && (

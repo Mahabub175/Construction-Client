@@ -45,7 +45,6 @@ const SliderCreate = ({ open, setOpen }) => {
     <CustomModal open={open} setOpen={setOpen} title="Create Slider">
       <CustomForm onSubmit={onSubmit}>
         <SliderForm />
-
         <FormButton setOpen={setOpen} loading={isLoading} />
       </CustomForm>
     </CustomModal>

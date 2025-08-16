@@ -41,16 +41,15 @@ const MenuItems = ({ items, setCurrent, closeDrawer, globalData }) => {
         );
       })}
 
-      <Link href="/" className="w-auto hidden lg:block">
+      <Link href="/" className="w-auto hidden lg:block py-5">
         <Image
           src={globalData?.results?.logo ?? logo}
           alt="logo"
-          width={150}
-          height={150}
+          width={90}
+          height={90}
           onClick={() => {
             setCurrent("home");
           }}
-          className="w-full h-[130px]"
         />
       </Link>
 

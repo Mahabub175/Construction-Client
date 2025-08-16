@@ -2,6 +2,7 @@
 
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 import FeaturedBanner from "../Home/FeaturedBanner";
+import Link from "next/link";
 
 const SpecialService = () => {
   const { data: globalData } = useGetAllGlobalSettingQuery();
@@ -32,9 +33,11 @@ const SpecialService = () => {
           <p>Affordable Price</p>
         </div>
         <div className="mt-10 flex justify-center items-center">
-          <button className="px-10 py-3 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
-            View Handyman Services
-          </button>
+          <Link href={"/work"}>
+            <button className="px-10 py-3 font-medium rounded bg-transparent text-primary hover:text-white border border-primary hover:bg-primary transition-all duration-300">
+              View Handyman Services
+            </button>
+          </Link>
         </div>
       </div>
     </div>
