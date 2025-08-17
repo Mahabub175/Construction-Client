@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaWhatsapp,
+  FaYoutube,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
@@ -60,6 +61,13 @@ const ContactDetails = () => {
                 rel="noopener noreferrer"
               >
                 <FaFacebook className="text-4xl bg-primary p-2 rounded-full text-white hover:scale-110 duration-300" />
+              </Link>
+              <Link
+                href={globalData?.results?.businessYoutube ?? "/"}
+                target="_blank"
+                className="flex items-center gap-4"
+              >
+                <FaYoutube className="text-4xl bg-primary p-2 rounded-full text-white hover:scale-110 duration-300" />
               </Link>
               <Link
                 href={globalData?.results?.businessLinkedin ?? "/"}
