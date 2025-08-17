@@ -51,8 +51,8 @@ const Banner = () => {
                 <div className="absolute inset-0 bg-black/40" />
 
                 {item?.name && (
-                  <div className="absolute inset-0 flex items-center justify-center max-w-4xl mx-auto leading-loose">
-                    <p className="text-white/80 text-lg md:text-2xl lg:text-7xl font-medium text-center px-4">
+                  <div className="absolute inset-0 flex items-center justify-center w-2/3 lg:max-w-4xl mx-auto leading-loose">
+                    <p className="text-white/80 text-xl md:text-3xl xl:text-7xl font-medium text-center px-4">
                       “{item?.name}”
                     </p>
                   </div>

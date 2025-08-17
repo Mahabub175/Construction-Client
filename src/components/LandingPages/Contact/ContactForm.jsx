@@ -12,9 +12,9 @@ import { MdOutlinePhone } from "react-icons/md";
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
 
-  const serviceId = "service_wwqdu65";
-  const templateId = "template_yu9xi1e";
-  const publicKey = "zm3VN97UXp-R42W0z";
+  const serviceId = "service_gf5v9zc";
+  const templateId = "template_o250ohc";
+  const publicKey = "BSsDXYhcWxJ7cxdJe";
 
   const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]*$/;
 
@@ -42,6 +42,7 @@ const ContactForm = () => {
       toast.success(`Thank you for your message ${templateParam?.from_name}`, {
         id: toastId,
       });
+      window.location.reload();
     } catch (err) {
       toast.error("Something went wrong! Please try again!", {
         id: toastId,

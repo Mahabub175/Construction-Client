@@ -58,12 +58,12 @@ const Navbar = () => {
     <nav className={`bg-black fixed top-0 z-50 w-full`}>
       <div className={`-my-3 lg:-my-5 my-container`}>
         <div className="flex justify-between lg:justify-center items-center gap-4">
-          <Link href="/" className="w-auto lg:hidden -ml-4">
+          <Link href="/" className="w-auto lg:hidden -ml-4 py-2.5">
             <Image
               src={globalData?.results?.logo ?? logo}
               alt="logo"
-              width={80}
-              height={80}
+              width={60}
+              height={60}
               onClick={() => {
                 setCurrent("home");
               }}
