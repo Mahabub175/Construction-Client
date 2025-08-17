@@ -1,5 +1,5 @@
 import { FaImage, FaPager, FaUser } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
+import { IoSettingsSharp, IoMailOpen } from "react-icons/io5";
 import {
   RiUserSettingsFill,
   RiGalleryFill,
@@ -53,6 +53,11 @@ export const adminSidebarRoutes = [
     name: "Blog",
     path: "blog",
     icon: FaPager,
+  },
+  {
+    name: "Newsletter",
+    path: "newsletter",
+    icon: IoMailOpen,
   },
   {
     name: "User",
