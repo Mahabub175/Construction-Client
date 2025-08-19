@@ -3,7 +3,6 @@
 import { SubmitButton } from "@/components/Reusable/Button/CustomButton";
 import CustomForm from "@/components/Reusable/Form/CustomForm";
 import CustomInput from "@/components/Reusable/Form/CustomInput";
-import CustomTextEditor from "@/components/Reusable/Form/CustomTextEditor";
 import FileUploader from "@/components/Reusable/Form/FileUploader";
 import {
   useGetAllGlobalSettingQuery,
@@ -13,8 +12,16 @@ import { appendToFormData } from "@/utilities/lib/appendToFormData";
 import { compressImage } from "@/utilities/lib/compressImage";
 import { transformDefaultValues } from "@/utilities/lib/transformedDefaultValues";
 import { ColorPicker, Divider, Form } from "antd";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+
+const CustomTextEditor = dynamic(
+  () => import("@/components/Reusable/Form/CustomTextEditor"),
+  {
+    ssr: false,
+  }
+);
 
 const AdminAccountSetting = () => {
   const [fields, setFields] = useState([]);
