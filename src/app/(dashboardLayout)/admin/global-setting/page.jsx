@@ -3,6 +3,7 @@
 import { SubmitButton } from "@/components/Reusable/Button/CustomButton";
 import CustomForm from "@/components/Reusable/Form/CustomForm";
 import CustomInput from "@/components/Reusable/Form/CustomInput";
+import CustomTextEditor from "@/components/Reusable/Form/CustomTextEditor";
 import FileUploader from "@/components/Reusable/Form/FileUploader";
 import {
   useGetAllGlobalSettingQuery,
@@ -256,6 +257,37 @@ const AdminAccountSetting = () => {
             label={"Business Work Hours"}
             required={false}
           />
+
+          <Form.Item label={"Delivery Details"} name={"delivery"} required>
+            <CustomTextEditor />
+          </Form.Item>
+          <Form.Item label={"Pickup Details"} name={"pickupPoint"} required>
+            <CustomTextEditor />
+          </Form.Item>
+          <Form.Item label={"Payment Details"} name={"paymentTerms"} required>
+            <CustomTextEditor />
+          </Form.Item>
+          <Form.Item
+            label={"Privacy Policy Details"}
+            name={"privacyPolicy"}
+            required
+          >
+            <CustomTextEditor />
+          </Form.Item>
+          <Form.Item
+            label={"Refund & Return Policy Details"}
+            name={"refundAndReturns"}
+            required
+          >
+            <CustomTextEditor />
+          </Form.Item>
+          <Form.Item
+            label={"Terms & Conditions Policy Details"}
+            name={"termsAndConditions"}
+            required
+          >
+            <CustomTextEditor />
+          </Form.Item>
 
           <Form.Item
             name="primaryColor"

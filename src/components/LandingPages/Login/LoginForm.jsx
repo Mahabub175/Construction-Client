@@ -9,27 +9,12 @@ import { useDispatch } from "react-redux";
 import { useLoginMutation } from "@/redux/services/auth/authApi";
 import { toast } from "sonner";
 import { setUser } from "@/redux/services/auth/authSlice";
-import { Checkbox, Form } from "antd";
-import { useEffect, useState } from "react";
 
 const LoginForm = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [fields, setFields] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(false);
 
   const [login, { isLoading }] = useLoginMutation();
-
-  useEffect(() => {
-    if (isAdmin) {
-      setFields([
-        { name: "emailNumber", value: "01700000000", error: "" },
-        { name: "password", value: "123456", error: "" },
-      ]);
-    } else {
-      setFields([]);
-    }
-  }, [isAdmin]);
 
   const onSubmit = async (values) => {
     const toastId = toast.loading("Logging in...");
@@ -48,7 +33,7 @@ const LoginForm = () => {
 
   return (
     <div className="lg:w-[450px] mt-6">
-      <CustomForm fields={fields} onSubmit={onSubmit}>
+      <CustomForm onSubmit={onSubmit}>
         <CustomInput
           label={"Phone Number"}
           name={"emailNumber"}
@@ -61,14 +46,7 @@ const LoginForm = () => {
           type={"password"}
           required={true}
         />
-        <Form.Item name="isAdmin" valuePropName="checked">
-          <Checkbox
-            checked={isAdmin}
-            onChange={(e) => setIsAdmin(e.target.checked)}
-          >
-            Sign in as Admin
-          </Checkbox>
-        </Form.Item>
+
         <SubmitButton text={"Log In"} loading={isLoading} fullWidth={true} />
       </CustomForm>
       <div className="flex items-center my-6">

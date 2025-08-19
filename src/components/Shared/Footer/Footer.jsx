@@ -21,7 +21,7 @@ const footerLinks = [
   { name: "Pickup Point", to: "/pickup-point" },
   { name: "Payment Terms", to: "/payment-terms" },
   { name: "Privacy Policy", to: "/privacy-policy" },
-  { name: "Refund & Return", to: "/refund-and-return" },
+  { name: "Refund & Return", to: "/refund-and-returns" },
   { name: "Terms & Condition", to: "/terms-and-conditions" },
   { name: "Blog", to: "/blog" },
 ];
@@ -48,6 +48,7 @@ const Footer = () => {
             {footerLinks?.map((item, i) => (
               <Link key={i} href={item?.to}>
                 <p
+                  onClick={() => window.scrollTo(0, 0)}
                   className={`border border-primary text-white p-2 rounded-full text-xs font-medium duration-300 tracking-widest ${
                     item?.to === pathname
                       ? "bg-primary text-primaryLight"

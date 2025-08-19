@@ -70,6 +70,7 @@ export const transformDefaultValues = (defaultValue, selectedData) => {
             "galleryBanner",
             "shopBanner",
             "contactBanner",
+            "youtubeVide",
           ].some((substring) => key.includes(substring)) &&
           !excludedKeys.includes(key)
         ) {

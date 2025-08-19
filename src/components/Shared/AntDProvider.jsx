@@ -12,7 +12,6 @@ import { jwtDecode } from "jwt-decode";
 import { Toaster } from "sonner";
 import { usePathname } from "next/navigation";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
-import logo from "@/assets/images/logo.png";
 import LoadingAnimation from "./LoadingAnimation";
 
 const AntDProvider = ({ children }) => {
@@ -52,7 +51,7 @@ const WrappedAntDConfig = ({ children }) => {
 
       document.title = websiteName;
 
-      const { primaryColor, secondaryColor, favicon } = data.results;
+      const { primaryColor, secondaryColor } = data.results;
 
       dispatch(setColors({ primaryColor, secondaryColor }));
 
@@ -64,33 +63,14 @@ const WrappedAntDConfig = ({ children }) => {
         "--secondaryColor",
         secondaryColor
       );
-
-      if (favicon) {
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-          link = document.createElement("link");
-          link.rel = "icon";
-          document.head.appendChild(link);
-        }
-        link.href = favicon;
-      }
     }
     setLoading(false);
   }, [data, dispatch, token]);
 
   useEffect(() => {
-    if (!data?.results?.favicon) return;
+    if (!data?.results) return;
 
-    const favicon = data.results.favicon || logo;
     document.title = data.results.name || "Genesis Carpenter";
-
-    let link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-      link = document.createElement("link");
-      link.rel = "icon";
-      document.head.appendChild(link);
-    }
-    link.href = favicon;
   }, [data, router]);
 
   if (loading || isFetching || slider?.results?.length === 0) {
