@@ -29,7 +29,10 @@
     "redux-persist": "^6.0.0",
     "sharp": "^0.33.5",
     "sonner": "^1.4.41",
-    "swiper": "^11.2.6"
+    "swiper": "^11.2.6",
+    "video.js": "^8.23.4",
+    "videojs-record": "^4.8.0",
+    "webrtc-adapter": "^9.0.3"
   },
   "devDependencies": {
     "eslint": "^8",
