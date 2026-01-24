@@ -20,7 +20,7 @@ const CustomTextEditor = dynamic(
   () => import("@/components/Reusable/Form/CustomTextEditor"),
   {
     ssr: false,
-  }
+  },
 );
 
 const AdminAccountSetting = () => {
@@ -52,52 +52,62 @@ const AdminAccountSetting = () => {
 
       if (!values?.logo?.[0].url) {
         submittedData.logo = await compressImage(
-          values?.logo?.[0].originFileObj
+          values?.logo?.[0].originFileObj,
         );
       }
       if (!values?.favicon?.[0].url) {
         submittedData.favicon = await compressImage(
-          values?.favicon?.[0].originFileObj
+          values?.favicon?.[0].originFileObj,
         );
       }
       if (!values?.aboutBanner?.[0].url) {
         submittedData.aboutBanner = await compressImage(
-          values?.aboutBanner?.[0].originFileObj
+          values?.aboutBanner?.[0].originFileObj,
+        );
+      }
+      if (!values?.aboutImage1?.[0].url) {
+        submittedData.aboutImage1 = await compressImage(
+          values?.aboutImage1?.[0].originFileObj,
+        );
+      }
+      if (!values?.aboutImage2?.[0].url) {
+        submittedData.aboutImage2 = await compressImage(
+          values?.aboutImage2?.[0].originFileObj,
         );
       }
       if (!values?.serviceBanner?.[0].url) {
         submittedData.serviceBanner = await compressImage(
-          values?.serviceBanner?.[0].originFileObj
+          values?.serviceBanner?.[0].originFileObj,
         );
       }
       if (!values?.galleryBanner?.[0].url) {
         submittedData.galleryBanner = await compressImage(
-          values?.galleryBanner?.[0].originFileObj
+          values?.galleryBanner?.[0].originFileObj,
         );
       }
       if (!values?.workBanner?.[0].url) {
         submittedData.workBanner = await compressImage(
-          values?.workBanner?.[0].originFileObj
+          values?.workBanner?.[0].originFileObj,
         );
       }
       if (!values?.contactBanner?.[0].url) {
         submittedData.contactBanner = await compressImage(
-          values?.contactBanner?.[0].originFileObj
+          values?.contactBanner?.[0].originFileObj,
         );
       }
       if (!values?.processBanner?.[0].url) {
         submittedData.processBanner = await compressImage(
-          values?.processBanner?.[0].originFileObj
+          values?.processBanner?.[0].originFileObj,
         );
       }
       if (!values?.shopBanner?.[0].url) {
         submittedData.shopBanner = await compressImage(
-          values?.shopBanner?.[0].originFileObj
+          values?.shopBanner?.[0].originFileObj,
         );
       }
       if (!values?.blogBanner?.[0].url) {
         submittedData.blogBanner = await compressImage(
-          values?.blogBanner?.[0].originFileObj
+          values?.blogBanner?.[0].originFileObj,
         );
       }
       const updatedUserData = new FormData();
@@ -158,6 +168,18 @@ const AdminAccountSetting = () => {
             defaultValue={data?.results?.aboutBanner}
             label="Website About Banner"
             name="aboutBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.aboutImage1}
+            label="Website About Image 1"
+            name="aboutImage1"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.aboutImage2}
+            label="Website About Image 2"
+            name="aboutImage2"
             required={true}
           />
           <FileUploader

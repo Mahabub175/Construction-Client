@@ -1,8 +1,15 @@
-import { processData } from "@/assets/data/processData";
+"use client";
+
+import LoadingAnimation from "@/components/Shared/LoadingAnimation";
+import { useGetAllStepsQuery } from "@/redux/services/step/stepApi";
 import Image from "next/image";
 import React from "react";
 
 const ProcessSteps = () => {
+  const { data: stepData } = useGetAllStepsQuery();
+  if (!stepData) {
+    return <LoadingAnimation />;
+  }
   return (
     <section className="mb-10 my-container -mt-5 lg:-mt-10">
       <h3 className="text-center mb-10 font-medium text-lg">
@@ -11,7 +18,7 @@ const ProcessSteps = () => {
         Our process makes it easy.
       </h3>
       <div className="lg:mt-20">
-        {processData.map((item, i) => (
+        {stepData?.results?.map((item, i) => (
           <div
             key={item?.id}
             className={`flex flex-col items-center ${
@@ -27,7 +34,7 @@ const ProcessSteps = () => {
                 {item?.description}
               </p>
               <ul className="list-disc list-inside pl-5">
-                {item?.lists?.map((list, i) => (
+                {item?.list?.map((list, i) => (
                   <li key={i} className="mb-2">
                     {list}
                   </li>
@@ -35,7 +42,12 @@ const ProcessSteps = () => {
               </ul>
             </div>
 
-            <Image src={item?.image} alt="process" width={500} height={500} />
+            <Image
+              src={item?.attachment}
+              alt={item?.title}
+              width={500}
+              height={500}
+            />
           </div>
         ))}
       </div>

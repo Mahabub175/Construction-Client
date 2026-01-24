@@ -58,7 +58,7 @@ const AboutDetails = () => {
         </div>
         <div>
           <Image
-            src={about1}
+            src={globalData?.results?.aboutImage1 ?? about1}
             alt="about1"
             width={500}
             height={500}
@@ -90,7 +90,7 @@ const AboutDetails = () => {
         </div>
         <div>
           <Image
-            src={about2}
+            src={globalData?.results?.aboutImage2 ?? about2}
             alt="about2"
             width={500}
             height={500}

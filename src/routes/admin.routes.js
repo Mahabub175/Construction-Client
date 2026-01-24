@@ -12,6 +12,7 @@ import {
 } from "react-icons/tb";
 import { GrBusinessService } from "react-icons/gr";
 import { BsPersonWorkspace } from "react-icons/bs";
+import { PiStepsFill } from "react-icons/pi";
 
 export const adminSidebarRoutes = [
   {
@@ -33,6 +34,11 @@ export const adminSidebarRoutes = [
     name: "Work",
     path: "work",
     icon: BsPersonWorkspace,
+  },
+  {
+    name: "Step",
+    path: "step",
+    icon: PiStepsFill,
   },
   {
     name: "Gallery",

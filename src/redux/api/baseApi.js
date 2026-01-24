@@ -28,6 +28,7 @@ export const baseApi = createApi({
     "shop",
     "review",
     "brand",
+    "step",
   ],
   endpoints: () => ({}),
 });
