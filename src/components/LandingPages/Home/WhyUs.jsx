@@ -6,12 +6,14 @@ import whyUs from "@/assets/images/whyUs.png";
 import Image from "next/image";
 import { whyUsData } from "@/assets/data/homeData";
 import Link from "next/link";
+import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 
 const WhyUs = () => {
   const { data: sliders } = useGetAllSlidersQuery();
+  const { data: globalData } = useGetAllGlobalSettingQuery();
 
   const featuredBanners = sliders?.results?.filter(
-    (item) => item?.status && item?.bottomBanner && item?.attachment
+    (item) => item?.status && item?.bottomBanner && item?.attachment,
   );
 
   return (
@@ -27,7 +29,7 @@ const WhyUs = () => {
       )}
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center mb-10 lg:mb-20 my-container">
         <Image
-          src={whyUs}
+          src={globalData?.results?.whyUsImage1 ?? whyUs}
           alt="why us"
           width={500}
           height={600}

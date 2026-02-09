@@ -5,12 +5,14 @@ import whyUs from "@/assets/images/whyUs.png";
 import Link from "next/link";
 import { useGetAllSlidersQuery } from "@/redux/services/slider/sliderApi";
 import FeaturedBanner from "./FeaturedBanner";
+import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 
 const Shops = () => {
   const { data: sliders } = useGetAllSlidersQuery();
+  const { data: globalData } = useGetAllGlobalSettingQuery();
 
   const featuredBanners = sliders?.results?.filter(
-    (item) => item?.status && item?.bottomBanner && item?.attachment
+    (item) => item?.status && item?.bottomBanner && item?.attachment,
   );
 
   return (
@@ -25,8 +27,8 @@ const Shops = () => {
       <div className="mb-10 lg:mb-20 my-container">
         <div className="flex flex-col-reverse lg:flex-row justify-between items-center lg:gap-20">
           <Image
-            src={whyUs}
-            alt="why us"
+            src={globalData?.results?.homeShopImage ?? whyUs}
+            alt="homeShopImage"
             width={500}
             height={600}
             className="mx-auto mb-10 lg:mb-0"

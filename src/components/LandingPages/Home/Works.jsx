@@ -1,13 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import whyUs from "@/assets/images/whyUs.png";
 import Link from "next/link";
+import { useGetAllGlobalSettingQuery } from "@/redux/services/globalSetting/globalSettingApi";
 
 const Works = () => {
+  const { data: globalData } = useGetAllGlobalSettingQuery();
+
   return (
     <section className="mb-10 lg:mb-20 my-container">
       <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center lg:gap-20">
         <Image
-          src={whyUs}
+          src={globalData?.results?.whyUsImage2 ?? whyUs}
           alt="why us"
           width={500}
           height={600}

@@ -3,6 +3,7 @@
 import { SubmitButton } from "@/components/Reusable/Button/CustomButton";
 import CustomForm from "@/components/Reusable/Form/CustomForm";
 import CustomInput from "@/components/Reusable/Form/CustomInput";
+import CustomSelect from "@/components/Reusable/Form/CustomSelect";
 import FileUploader from "@/components/Reusable/Form/FileUploader";
 import {
   useGetAllGlobalSettingQuery,
@@ -110,6 +111,22 @@ const AdminAccountSetting = () => {
           values?.blogBanner?.[0].originFileObj,
         );
       }
+      if (!values?.whyUsImage1?.[0].url) {
+        submittedData.whyUsImage1 = await compressImage(
+          values?.whyUsImage1?.[0].originFileObj,
+        );
+      }
+      if (!values?.whyUsImage2?.[0].url) {
+        submittedData.whyUsImage2 = await compressImage(
+          values?.whyUsImage2?.[0].originFileObj,
+        );
+      }
+      if (!values?.homeShopImage?.[0].url) {
+        submittedData.homeShopImage = await compressImage(
+          values?.homeShopImage?.[0].originFileObj,
+        );
+      }
+
       const updatedUserData = new FormData();
       appendToFormData(submittedData, updatedUserData);
 
@@ -134,11 +151,24 @@ const AdminAccountSetting = () => {
   };
 
   useEffect(() => {
-    setFields(transformDefaultValues(data?.results));
+    setFields(
+      transformDefaultValues(data?.results, [
+        {
+          name: "aboutUsDetails1",
+          value: data?.results?.aboutUsDetails1,
+          errors: "",
+        },
+        {
+          name: "aboutUsDetails2",
+          value: data?.results?.aboutUsDetails2,
+          errors: "",
+        },
+      ]),
+    );
   }, [data]);
 
   return (
-    <section className="lg:w-4/6 mx-auto">
+    <section className="lg:w-4/6 mx-auto overflow-hidden">
       <Divider orientation="left" orientationMargin={0}>
         Global Settings
       </Divider>
@@ -149,6 +179,20 @@ const AdminAccountSetting = () => {
           type={"textarea"}
           label={"Website Description"}
           required={false}
+        />
+        <CustomSelect
+          name={"aboutUsDetails1"}
+          label={"About Us Details 1"}
+          required={true}
+          mode="tags"
+          options={[]}
+        />
+        <CustomSelect
+          name={"aboutUsDetails2"}
+          label={"About Us Details 2"}
+          required={true}
+          mode="tags"
+          options={[]}
         />
         <div className="two-grid">
           <FileUploader
@@ -222,6 +266,24 @@ const AdminAccountSetting = () => {
             defaultValue={data?.results?.blogBanner}
             label="Website Blog Banner"
             name="blogBanner"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.whyUsImage1}
+            label="Website Why Us Image 1"
+            name="whyUsImage1"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.whyUsImage2}
+            label="Website Why Us Image 2"
+            name="whyUsImage2"
+            required={true}
+          />
+          <FileUploader
+            defaultValue={data?.results?.homeShopImage}
+            label="Website Home Shop Image"
+            name="homeShopImage"
             required={true}
           />
           <CustomInput
