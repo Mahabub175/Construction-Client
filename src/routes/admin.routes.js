@@ -84,6 +84,11 @@ export const adminSidebarRoutes = [
         path: "global-setting",
         icon: TbSettingsFilled,
       },
+      {
+        name: "Global Images",
+        path: "global-images",
+        icon: TbSettingsFilled,
+      },
     ],
   },
 ];
